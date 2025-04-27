@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visit Calendar - Teen Pregnancy Support</title>
+  <link rel="stylesheet" href="../../../public/css/styles.css"> <!-- External styles assumed -->
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container">
+    <div class="logo">
+      <a href="../../../index.php">Teen Pregnancy Support</a>
+    </div>
+    <nav class="nav-links">
+      <a href="../../../modules/dashboard/pages/teen_dashboard.html" class="btn">Dashboard</a>
+      <a href="../../../modules/pregnancy/pages/due_date_entry.html" class="btn">Pregnancy</a>
+      <a href="../../../modules/nutrition/pages/nutrition_tips.html" class="btn">Nutrition</a>
+      <a href="../../../modules/content/pages/content_library.html" class="btn">Learning</a>
+      <a href="../../../modules/notifications/pages/notifications.html" class="btn">Notifications</a>
+      <a href="../../../modules/support/pages/help_center.html" class="btn">Support</a>
+      <a href="../../../modules/auth/logout.php" class="btn btn-primary">Logout</a>
+    </nav>
+  </div>
+</header>
+
+<main class="auth-container">
+  <h1>Your Prenatal Visit Calendar</h1>
+
+  <div id="visitCalendar">
+    <p>Loading your scheduled visits...</p>
+  </div>
+
+  <p class="auth-link">
+    Need to book a new appointment?  
+    <a href="schedule_visit.html">Schedule a Visit</a>.
+  </p>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>© <span id="year"></span> Teen Pregnancy Support App. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Auto-update footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Simulate loading scheduled visits (later to be replaced with backend API)
+  document.addEventListener('DOMContentLoaded', function() {
+    const calendarDiv = document.getElementById('visitCalendar');
+
+    // Dummy visits example
+    const visits = [
+      { date: '2025-05-01', facility: 'Sunrise Health Center', doctor: 'Dr. Emily Carter' },
+      { date: '2025-06-05', facility: 'Hope Medical Clinic', doctor: 'Dr. John Smith' },
+      { date: '2025-07-10', facility: 'City Wellness Hospital', doctor: 'Dr. Sarah Green' },
+    ];
+
+    if (visits.length > 0) {
+      let output = '<ul>';
+      visits.forEach(visit => {
+        output += `<li><strong>${new Date(visit.date).toLocaleDateString()}</strong> at ${visit.facility} with ${visit.doctor}</li>`;
+      });
+      output += '</ul>';
+      calendarDiv.innerHTML = output;
+    } else {
+      calendarDiv.innerHTML = "<p>No visits scheduled yet.</p>";
+    }
+  });
+</script>
+
+</body>
+</html>
+

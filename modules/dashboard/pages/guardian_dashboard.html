@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guardian Dashboard - Teen Pregnancy Support</title>
+  <link rel="stylesheet" href="../../../public/css/styles.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container">
+    <div class="logo">
+      <a href="../../../index.php">Teen Pregnancy Support</a>
+    </div>
+    <nav class="nav-links">
+      <a href="../../../modules/dashboard/pages/guardian_dashboard.html" class="btn">Dashboard</a>
+      <a href="../../../modules/pregnancy/pages/due_date_entry.html" class="btn">Pregnancy</a>
+      <a href="../../../modules/visits/pages/visit_calendar.html" class="btn">Visits</a>
+      <a href="../../../modules/nutrition/pages/nutrition_tips.html" class="btn">Nutrition</a>
+      <a href="../../../modules/content/pages/content_library.html" class="btn">Learning</a>
+      <a href="../../../modules/notifications/pages/notifications.html" class="btn">Notifications</a>
+      <a href="../../../modules/auth/logout.php" class="btn btn-primary">Logout</a>
+    </nav>
+  </div>
+</header>
+
+<main class="auth-container">
+  <h1>Welcome, Guardian</h1>
+
+  <section>
+    <h2>Teen Under Your Care</h2>
+    <p><strong>Name:</strong> <span id="teenName">Loading...</span></p>
+    <p><strong>Expected Due Date:</strong> <span id="teenDueDate">Loading...</span></p>
+    <p><strong>Weeks Pregnant:</strong> <span id="teenWeeksPregnant">Loading...</span></p>
+  </section>
+
+  <section style="margin-top: 30px;">
+    <h2>Action Center</h2>
+    <ul>
+      <li><a href="../../../modules/visits/pages/visit_calendar.html">Review Upcoming Prenatal Visits</a></li>
+      <li><a href="../../../modules/nutrition/pages/nutrition_tips.html">Check Daily Nutrition Tips</a></li>
+      <li><a href="../../../modules/support/pages/help_center.html">Get Support Resources</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>© <span id="year"></span> Teen Pregnancy Support App. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Auto-update footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Simulate fetching teen info (dummy for now)
+  document.addEventListener('DOMContentLoaded', function() {
+    const teenName = 'Amina Mwangi';
+    const dueDate = new Date('2025-08-15');
+    const today = new Date();
+
+    const diffTime = dueDate.getTime() - today.getTime();
+    const weeksLeft = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 7));
+    const weeksPregnant = 40 - weeksLeft;
+
+    document.getElementById('teenName').textContent = teenName;
+    document.getElementById('teenDueDate').textContent = dueDate.toLocaleDateString();
+    document.getElementById('teenWeeksPregnant').textContent = weeksPregnant > 0 ? `${weeksPregnant} weeks` : "Not available";
+  });
+</script>
+
+</body>
+</html>
+

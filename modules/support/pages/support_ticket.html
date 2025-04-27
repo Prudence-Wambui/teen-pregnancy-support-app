@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit Support Ticket - Teen Pregnancy Support</title>
+  <link rel="stylesheet" href="../../../public/css/styles.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container">
+    <div class="logo">
+      <a href="../../../index.php">Teen Pregnancy Support</a>
+    </div>
+    <nav class="nav-links">
+      <a href="../../../modules/dashboard/pages/teen_dashboard.html" class="btn">Dashboard</a>
+      <a href="../../../modules/pregnancy/pages/due_date_entry.html" class="btn">Pregnancy</a>
+      <a href="../../../modules/visits/pages/visit_calendar.html" class="btn">Visits</a>
+      <a href="../../../modules/nutrition/pages/nutrition_tips.html" class="btn">Nutrition</a>
+      <a href="../../../modules/content/pages/content_library.html" class="btn">Learning</a>
+      <a href="../../../modules/notifications/pages/notifications.html" class="btn">Notifications</a>
+      <a href="../../../modules/auth/logout.php" class="btn btn-primary">Logout</a>
+    </nav>
+  </div>
+</header>
+
+<main class="auth-container">
+  <h1>Submit a Support Ticket</h1>
+
+  <form action="../support_ticket.php" method="POST" id="supportTicketForm">
+    <label for="subject">Subject</label>
+    <input type="text" id="subject" name="subject" required>
+
+    <label for="issue_category">Category</label>
+    <select id="issue_category" name="issue_category" required>
+      <option value="">Select a Category</option>
+      <option value="Account Problem">Account Problem</option>
+      <option value="Pregnancy Advice">Pregnancy Advice</option>
+      <option value="Technical Issue">Technical Issue</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <label for="message">Describe Your Issue</label>
+    <textarea id="message" name="message" rows="6" placeholder="Describe the problem in detail..." required></textarea>
+
+    <button type="submit" class="btn-primary">Submit Ticket</button>
+  </form>
+
+  <p class="auth-link">
+    Need immediate help? <a href="help_center.html">Visit the Help Center</a>.
+  </p>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>© <span id="year"></span> Teen Pregnancy Support App. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Update footer year automatically
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
+

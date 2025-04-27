@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - Teen Pregnancy Support</title>
+  <link rel="stylesheet" href="../../../public/css/auth.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container">
+    <div class="logo">
+      <a href="../../../index.php">Teen Pregnancy Support</a>
+    </div>
+    <nav class="nav-links">
+      <a href="login.html" class="btn">Login</a>
+    </nav>
+  </div>
+</header>
+
+<main class="auth-container">
+  <h1>Create Your Account</h1>
+
+  <form id="registerForm" action="../register.php" method="POST">
+    <label for="role">I am a:</label>
+    <select id="role" name="role" required>
+      <option value="expectant_teen">Expectant Teen</option>
+      <option value="guardian">Guardian</option>
+    </select>
+
+    <label for="full_name">Full Name</label>
+    <input type="text" id="full_name" name="full_name" required>
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone_number">Phone Number</label>
+    <input type="text" id="phone_number" name="phone_number">
+
+    <label for="date_of_birth">Date of Birth</label>
+    <input type="date" id="date_of_birth" name="date_of_birth" required>
+
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" required minlength="6">
+
+    <label for="confirm_password">Confirm Password</label>
+    <input type="password" id="confirm_password" name="confirm_password" required minlength="6">
+
+    <button type="submit" class="btn-primary">Register</button>
+
+    <p class="auth-link">
+      Already have an account? <a href="login.html">Login</a>
+    </p>
+  </form>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>© <span id="year"></span> Teen Pregnancy Support App. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="../../../public/js/auth.js"></script>
+<script>
+  // Update year automatically
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

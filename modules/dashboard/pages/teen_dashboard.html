@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teen Dashboard - Teen Pregnancy Support</title>
+  <link rel="stylesheet" href="../../../public/css/styles.css"> <!-- Assuming external styles -->
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container">
+    <div class="logo">
+      <a href="../../../index.php">Teen Pregnancy Support</a>
+    </div>
+    <nav class="nav-links">
+      <a href="../../../modules/pregnancy/pages/due_date_entry.html" class="btn">Pregnancy</a>
+      <a href="../../../modules/visits/pages/visit_calendar.html" class="btn">Visits</a>
+      <a href="../../../modules/nutrition/pages/nutrition_tips.html" class="btn">Nutrition</a>
+      <a href="../../../modules/content/pages/content_library.html" class="btn">Learning</a>
+      <a href="../../../modules/notifications/pages/notifications.html" class="btn">Notifications</a>
+      <a href="../../../modules/support/pages/help_center.html" class="btn">Support</a>
+      <a href="../../../modules/auth/logout.php" class="btn btn-primary">Logout</a>
+    </nav>
+  </div>
+</header>
+
+<main class="auth-container">
+  <h1>Welcome to Your Dashboard</h1>
+
+  <section>
+    <h2>Your Pregnancy Progress</h2>
+    <p><strong>Due Date:</strong> <span id="dueDateDisplay">[Due Date Here]</span></p>
+    <p><strong>Weeks Pregnant:</strong> <span id="weeksPregnant">[Weeks Here]</span></p>
+  </section>
+
+  <section style="margin-top: 30px;">
+    <h2>Next Important Actions</h2>
+    <ul>
+      <li><a href="../../../modules/visits/pages/schedule_visit.html">Schedule Your Next Prenatal Visit</a></li>
+      <li><a href="../../../modules/nutrition/pages/nutrition_tips.html">View Today's Nutrition Tips</a></li>
+      <li><a href="../../../modules/support/pages/help_center.html">Find Emotional Support Resources</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>© <span id="year"></span> Teen Pregnancy Support App. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Update footer year automatically
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // (Dummy Example) Load pregnancy progress (this would normally come from database/session)
+  document.addEventListener('DOMContentLoaded', function() {
+    // Simulate fetching due date from server
+    const dueDateString = localStorage.getItem('due_date') || '2025-01-01'; // default
+    const dueDate = new Date(dueDateString);
+    const today = new Date();
+
+    // Calculate weeks
+    const diffTime = dueDate.getTime() - today.getTime();
+    const weeksLeft = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 7));
+    const weeksPregnant = 40 - weeksLeft;
+
+    document.getElementById('dueDateDisplay').textContent = dueDate.toLocaleDateString();
+    document.getElementById('weeksPregnant').textContent = weeksPregnant > 0 ? `${weeksPregnant} weeks` : "N/A";
+  });
+</script>
+
+</body>
+</html>
+

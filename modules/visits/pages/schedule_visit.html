@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schedule Prenatal Visit - Teen Pregnancy Support</title>
+  <link rel="stylesheet" href="../../../public/css/styles.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container">
+    <div class="logo">
+      <a href="../../../index.php">Teen Pregnancy Support</a>
+    </div>
+    <nav class="nav-links">
+      <a href="../../../modules/dashboard/pages/teen_dashboard.html" class="btn">Dashboard</a>
+      <a href="../../../modules/pregnancy/pages/due_date_entry.html" class="btn">Pregnancy</a>
+      <a href="../../../modules/nutrition/pages/nutrition_tips.html" class="btn">Nutrition</a>
+      <a href="../../../modules/content/pages/content_library.html" class="btn">Learning</a>
+      <a href="../../../modules/notifications/pages/notifications.html" class="btn">Notifications</a>
+      <a href="../../../modules/support/pages/help_center.html" class="btn">Support</a>
+      <a href="../../../modules/auth/logout.php" class="btn btn-primary">Logout</a>
+    </nav>
+  </div>
+</header>
+
+<main class="auth-container">
+  <h1>Schedule Your Prenatal Visit</h1>
+
+  <form action="../visit_controller.php" method="POST" id="scheduleVisitForm">
+    <label for="scheduled_date">Select Visit Date</label>
+    <input type="date" id="scheduled_date" name="scheduled_date" required>
+
+    <label for="facility_name">Healthcare Facility Name</label>
+    <input type="text" id="facility_name" name="facility_name" required>
+
+    <label for="healthcare_professional">Name of Healthcare Professional</label>
+    <input type="text" id="healthcare_professional" name="healthcare_professional" required>
+
+    <label for="notes">Notes (Optional)</label>
+    <textarea id="notes" name="notes" rows="4" placeholder="Add any special notes here..."></textarea>
+
+    <button type="submit" class="btn-primary">Schedule Visit</button>
+  </form>
+
+  <p class="auth-link">
+    View all scheduled visits in your  
+    <a href="visit_calendar.html">Visit Calendar</a>.
+  </p>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>© <span id="year"></span> Teen Pregnancy Support App. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Auto-update footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,89 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nutrition Tips - Teen Pregnancy Support</title>
+  <link rel="stylesheet" href="../../../public/css/styles.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container">
+    <div class="logo">
+      <a href="../../../index.php">Teen Pregnancy Support</a>
+    </div>
+    <nav class="nav-links">
+      <a href="../../../modules/dashboard/pages/teen_dashboard.html" class="btn">Dashboard</a>
+      <a href="../../../modules/pregnancy/pages/due_date_entry.html" class="btn">Pregnancy</a>
+      <a href="../../../modules/visits/pages/visit_calendar.html" class="btn">Visits</a>
+      <a href="../../../modules/content/pages/content_library.html" class="btn">Learning</a>
+      <a href="../../../modules/notifications/pages/notifications.html" class="btn">Notifications</a>
+      <a href="../../../modules/support/pages/help_center.html" class="btn">Support</a>
+      <a href="../../../modules/auth/logout.php" class="btn btn-primary">Logout</a>
+    </nav>
+  </div>
+</header>
+
+<main class="auth-container">
+  <h1>Daily Nutrition Tips</h1>
+
+  <div id="nutritionTips">
+    <p>Loading tips based on your trimester...</p>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>© <span id="year"></span> Teen Pregnancy Support App. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Auto-update footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Dummy trimester logic (later can fetch dynamically from database)
+  document.addEventListener('DOMContentLoaded', function() {
+    const tipsContainer = document.getElementById('nutritionTips');
+
+    // Example - Trimester 2
+    const trimester = 2; 
+
+    let tips = '';
+
+    if (trimester === 1) {
+      tips = `
+        <ul>
+          <li>Eat foods rich in folic acid like spinach and beans.</li>
+          <li>Stay hydrated: Drink at least 8 glasses of water a day.</li>
+          <li>Avoid raw seafood and unpasteurized dairy.</li>
+        </ul>
+      `;
+    } else if (trimester === 2) {
+      tips = `
+        <ul>
+          <li>Increase your calcium intake with milk, yogurt, and leafy greens.</li>
+          <li>Include iron-rich foods like lentils and lean meats.</li>
+          <li>Continue drinking plenty of water to avoid dehydration.</li>
+        </ul>
+      `;
+    } else if (trimester === 3) {
+      tips = `
+        <ul>
+          <li>Focus on small, frequent meals to manage heartburn.</li>
+          <li>Consume protein-rich snacks like nuts and eggs.</li>
+          <li>Stay active with light walking if approved by your doctor.</li>
+        </ul>
+      `;
+    } else {
+      tips = "<p>Unable to determine trimester. Please update your pregnancy info.</p>";
+    }
+
+    tipsContainer.innerHTML = tips;
+  });
+</script>
+
+</body>
+</html>
+

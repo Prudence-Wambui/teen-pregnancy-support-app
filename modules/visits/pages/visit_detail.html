@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visit Detail - Teen Pregnancy Support</title>
+  <link rel="stylesheet" href="../../../public/css/styles.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container">
+    <div class="logo">
+      <a href="../../../index.php">Teen Pregnancy Support</a>
+    </div>
+    <nav class="nav-links">
+      <a href="../../../modules/dashboard/pages/teen_dashboard.html" class="btn">Dashboard</a>
+      <a href="../../../modules/pregnancy/pages/due_date_entry.html" class="btn">Pregnancy</a>
+      <a href="../../../modules/visits/pages/visit_calendar.html" class="btn">Visits</a>
+      <a href="../../../modules/nutrition/pages/nutrition_tips.html" class="btn">Nutrition</a>
+      <a href="../../../modules/notifications/pages/notifications.html" class="btn">Notifications</a>
+      <a href="../../../modules/support/pages/help_center.html" class="btn">Support</a>
+      <a href="../../../modules/auth/logout.php" class="btn btn-primary">Logout</a>
+    </nav>
+  </div>
+</header>
+
+<main class="auth-container">
+  <h1>Visit Details</h1>
+
+  <section id="visitDetails">
+    <p>Loading visit details...</p>
+  </section>
+
+  <p class="auth-link">
+    <a href="visit_calendar.html">← Back to Visit Calendar</a>
+  </p>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>© <span id="year"></span> Teen Pregnancy Support App. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Update footer year automatically
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Simulate fetching visit details (later from backend)
+  document.addEventListener('DOMContentLoaded', function() {
+    const visitDiv = document.getElementById('visitDetails');
+
+    // Example dummy visit details (static for now)
+    const visit = {
+      date: '2025-05-01',
+      facility: 'Sunrise Health Center',
+      doctor: 'Dr. Emily Carter',
+      notes: 'Doctor emphasized importance of iron supplements. Discussed fetal movements.',
+      status: 'Completed'
+    };
+
+    let output = `
+      <ul>
+        <li><strong>Visit Date:</strong> ${new Date(visit.date).toLocaleDateString()}</li>
+        <li><strong>Facility:</strong> ${visit.facility}</li>
+        <li><strong>Doctor:</strong> ${visit.doctor}</li>
+        <li><strong>Status:</strong> ${visit.status}</li>
+        <li><strong>Notes:</strong> ${visit.notes}</li>
+      </ul>
+    `;
+
+    visitDiv.innerHTML = output;
+  });
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enter Due Date - Teen Pregnancy Support</title>
+  <link rel="stylesheet" href="../../../public/css/styles.css"> <!-- Assuming general styles -->
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container">
+    <div class="logo">
+      <a href="../../../index.php">Teen Pregnancy Support</a>
+    </div>
+    <nav class="nav-links">
+      <a href="../../../modules/dashboard/pages/teen_dashboard.html" class="btn">Dashboard</a>
+      <a href="../../../modules/visits/pages/visit_calendar.html" class="btn">Visits</a>
+      <a href="../../../modules/nutrition/pages/nutrition_tips.html" class="btn">Nutrition</a>
+      <a href="../../../modules/content/pages/content_library.html" class="btn">Learning</a>
+      <a href="../../../modules/support/pages/help_center.html" class="btn">Support</a>
+      <a href="../../../modules/auth/logout.php" class="btn btn-primary">Logout</a>
+    </nav>
+  </div>
+</header>
+
+<main class="auth-container">
+  <h1>Enter Your Due Date</h1>
+
+  <form action="../pregnancy_controller.php" method="POST" id="dueDateForm">
+    <label for="due_date">Expected Due Date</label>
+    <input type="date" id="due_date" name="due_date" required>
+
+    <button type="submit" class="btn-primary">Save Due Date</button>
+  </form>
+
+  <p class="auth-link">
+    Not sure about your due date?  
+    <a href="due_date_calculator.html">Calculate it here</a>.
+  </p>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>© <span id="year"></span> Teen Pregnancy Support App. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Update footer year dynamically
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
+

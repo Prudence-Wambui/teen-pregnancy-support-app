@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help Center - Teen Pregnancy Support</title>
+  <link rel="stylesheet" href="../../../public/css/styles.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container">
+    <div class="logo">
+      <a href="../../../index.php">Teen Pregnancy Support</a>
+    </div>
+    <nav class="nav-links">
+      <a href="../../../modules/dashboard/pages/teen_dashboard.html" class="btn">Dashboard</a>
+      <a href="../../../modules/pregnancy/pages/due_date_entry.html" class="btn">Pregnancy</a>
+      <a href="../../../modules/visits/pages/visit_calendar.html" class="btn">Visits</a>
+      <a href="../../../modules/nutrition/pages/nutrition_tips.html" class="btn">Nutrition</a>
+      <a href="../../../modules/content/pages/content_library.html" class="btn">Learning</a>
+      <a href="../../../modules/notifications/pages/notifications.html" class="btn">Notifications</a>
+      <a href="../../../modules/auth/logout.php" class="btn btn-primary">Logout</a>
+    </nav>
+  </div>
+</header>
+
+<main class="auth-container">
+  <h1>Help Center & Support</h1>
+
+  <section>
+    <h2>Common Questions</h2>
+    <ul>
+      <li><strong>How do I update my due date?</strong> - Go to Pregnancy > Due Date Entry and submit a new date.</li>
+      <li><strong>How do I schedule a prenatal visit?</strong> - Go to Visits > Schedule Visit.</li>
+      <li><strong>What should I eat during pregnancy?</strong> - See Nutrition Tips under the Nutrition section.</li>
+      <li><strong>How do I join a support group?</strong> - Contact support below to get connected.</li>
+    </ul>
+  </section>
+
+  <section style="margin-top: 30px;">
+    <h2>Emotional and Mental Health Support</h2>
+    <p>Pregnancy can be overwhelming. Remember, you are not alone. Here are resources available to you:</p>
+    <ul>
+      <li>Talk to a counselor at your healthcare facility.</li>
+      <li>Join a local teen mother support group.</li>
+      <li>Use mindfulness apps like Calm or Headspace for relaxation.</li>
+      <li>Speak to trusted family members or friends.</li>
+    </ul>
+  </section>
+
+  <section style="margin-top: 30px;">
+    <h2>Contact Support</h2>
+    <form action="../support_controller.php" method="POST" id="supportForm">
+      <label for="subject">Subject</label>
+      <input type="text" id="subject" name="subject" required>
+
+      <label for="message">Your Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit" class="btn-primary">Send Message</button>
+    </form>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>© <span id="year"></span> Teen Pregnancy Support App. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Update footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
+

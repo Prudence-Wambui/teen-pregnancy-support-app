@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Developer Dashboard - Teen Pregnancy Support</title>
+  <link rel="stylesheet" href="../../../public/css/styles.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container">
+    <div class="logo">
+      <a href="../../../index.php">Teen Pregnancy Support</a>
+    </div>
+    <nav class="nav-links">
+      <a href="../../../modules/dashboard/pages/teen_dashboard.html" class="btn">Dashboard</a>
+      <a href="../../../modules/pregnancy/pages/due_date_entry.html" class="btn">Pregnancy</a>
+      <a href="../../../modules/visits/pages/visit_calendar.html" class="btn">Visits</a>
+      <a href="../../../modules/nutrition/pages/nutrition_tips.html" class="btn">Nutrition</a>
+      <a href="../../../modules/content/pages/content_library.html" class="btn">Learning</a>
+      <a href="../../../modules/notifications/pages/notifications.html" class="btn">Notifications</a>
+      <a href="../../../modules/auth/logout.php" class="btn btn-primary">Logout</a>
+    </nav>
+  </div>
+</header>
+
+<main class="auth-container">
+  <h1>Developer & Organization Dashboard</h1>
+
+  <section id="statsSection">
+    <p>Loading platform statistics...</p>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>© <span id="year"></span> Teen Pregnancy Support App. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Update footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Simulate loading anonymized statistics
+  document.addEventListener('DOMContentLoaded', function() {
+    const statsDiv = document.getElementById('statsSection');
+
+    // Example dummy statistics
+    const stats = {
+      totalUsers: 325,
+      totalExpectantTeens: 240,
+      totalGuardians: 85,
+      averageVisitsScheduled: 5.6,
+      averageVisitCompletionRate: 78,
+      mostActiveRegion: 'Nairobi County'
+    };
+
+    let output = `
+      <ul>
+        <li><strong>Total Users Registered:</strong> ${stats.totalUsers}</li>
+        <li><strong>Expectant Teens:</strong> ${stats.totalExpectantTeens}</li>
+        <li><strong>Guardians:</strong> ${stats.totalGuardians}</li>
+        <li><strong>Avg Prenatal Visits Scheduled:</strong> ${stats.averageVisitsScheduled}</li>
+        <li><strong>Avg Visit Attendance Rate:</strong> ${stats.averageVisitCompletionRate}%</li>
+        <li><strong>Most Active Region:</strong> ${stats.mostActiveRegion}</li>
+      </ul>
+    `;
+    statsDiv.innerHTML = output;
+  });
+</script>
+
+</body>
+</html>
+
