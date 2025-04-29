@@ -3,56 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - Teen Pregnancy Support</title>
+  <title>Login | TeenParent+</title>
   <link rel="stylesheet" href="../../../public/css/auth.css">
+  <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
+
 <body>
 
-<header class="navbar">
-  <div class="container">
-    <div class="logo">
-      <a href="../../../index.php">Teen Pregnancy Support</a>
+<!-- Login Container -->
+<div class="auth-container">
+  <h1>Welcome Back 💛</h1>
+  <p>Glad to see you again! Let's continue your journey with strength and hope.</p>
+
+  <form action="../../../modules/auth/login.php" method="POST" class="auth-form">
+    <!-- Email Address -->
+    <div class="input-group">
+      <i class="fas fa-envelope"></i>
+      <input type="email" name="email" placeholder="Email Address" required>
     </div>
-    <nav class="nav-links">
-      <a href="../../../modules/auth/pages/register.html" class="btn btn-primary">Sign Up</a>
-    </nav>
-  </div>
-</header>
 
-<main class="auth-container">
-  <h1>Login to Your Account</h1>
+    <!-- Password -->
+    <div class="input-group">
+      <i class="fas fa-lock"></i>
+      <input type="password" name="password" placeholder="Password" required>
+    </div>
 
-  <form action="../login.php" method="POST" id="loginForm">
-    <label for="email">Email Address</label>
-    <input type="email" id="email" name="email" required>
-
-    <label for="password">Password</label>
-    <input type="password" id="password" name="password" required>
-
+    <!-- Submit Button -->
     <button type="submit" class="btn-primary">Login</button>
-
-    <p class="auth-link">
-      Don't have an account? <a href="register.html">Register</a>
-    </p>
-
-    <p class="auth-link">
-      Forgot your password? <a href="reset_password.html">Reset it here</a>
-    </p>
   </form>
-</main>
 
-<footer class="footer">
-  <div class="container">
-    <p>© <span id="year"></span> Teen Pregnancy Support App. All rights reserved.</p>
-  </div>
-</footer>
-
-<script src="../../../public/js/auth.js"></script>
-<script>
-  // Auto-update footer year
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+  <p class="bottom-text">
+    New here? 
+    <a href="../../../modules/auth/register.html">Create an account</a>
+  </p>
+</div>
 
 </body>
 </html>
-

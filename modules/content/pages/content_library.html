@@ -3,39 +3,81 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Learning Resources - Teen Pregnancy Support</title>
-  <link rel="stylesheet" href="../../../public/css/styles.css">
+  <title>Content Library | TeenParent+</title>
+  <link rel="stylesheet" href="../../../public/css/content_library.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
+
 <body>
 
+<!-- Header -->
 <header class="navbar">
-  <div class="container">
+  <div class="container navbar-container">
     <div class="logo">
-      <a href="../../../index.php">Teen Pregnancy Support</a>
+      <a href="../../../index.php"><i class="fas fa-baby-carriage"></i> TeenParent+</a>
     </div>
+
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" class="menu-icon">
+      <i class="fas fa-bars"></i>
+    </label>
+
     <nav class="nav-links">
-      <a href="../../../modules/dashboard/pages/teen_dashboard.html" class="btn">Dashboard</a>
-      <a href="../../../modules/pregnancy/pages/due_date_entry.html" class="btn">Pregnancy</a>
-      <a href="../../../modules/visits/pages/visit_calendar.html" class="btn">Visits</a>
-      <a href="../../../modules/nutrition/pages/nutrition_tips.html" class="btn">Nutrition</a>
-      <a href="../../../modules/notifications/pages/notifications.html" class="btn">Notifications</a>
-      <a href="../../../modules/support/pages/help_center.html" class="btn">Support</a>
-      <a href="../../../modules/auth/logout.php" class="btn btn-primary">Logout</a>
+      <a href="../../../modules/support/pages/help_center.html"><i class="fas fa-hands-helping"></i> Support</a>
+      <a href="../../../modules/auth/logout.php" class="btn-primary"><i class="fas fa-sign-out-alt"></i> Logout</a>
     </nav>
   </div>
 </header>
 
-<main class="auth-container">
-  <h1>Educational Content Library</h1>
+<!-- Main Content -->
+<main class="library-container fade-slide">
+  <h1>Explore Your Learning Journey 💛</h1>
+  <p>Find tips, guides, quizzes, and support designed for you and your baby's future.</p>
 
-  <section id="contentLibrary">
-    <p>Loading available resources...</p>
-  </section>
+  <div class="card-grid">
+
+    <!-- Card 1 -->
+    <a href="content_details.html?id=1" class="card">
+      <div class="card-icon"><i class="fas fa-carrot"></i></div>
+      <h3>Nutrition During Pregnancy</h3>
+      <p>Learn how to nourish yourself and your growing baby.</p>
+    </a>
+
+    <!-- Card 2 -->
+    <a href="content_details.html?id=2" class="card">
+      <div class="card-icon"><i class="fas fa-running"></i></div>
+      <h3>Safe Exercises</h3>
+      <p>Stay healthy and active safely throughout your pregnancy.</p>
+    </a>
+
+    <!-- Card 3 -->
+    <a href="content_details.html?id=3" class="card">
+      <div class="card-icon"><i class="fas fa-baby"></i></div>
+      <h3>Labor & Delivery</h3>
+      <p>Understand the stages of labor and what to expect.</p>
+    </a>
+
+    <!-- Card 4 -->
+    <a href="content_details.html?id=4" class="card">
+      <div class="card-icon"><i class="fas fa-heart"></i></div>
+      <h3>Caring for Your Newborn</h3>
+      <p>Discover essential tips for newborn care and bonding.</p>
+    </a>
+
+    <!-- Card 5 -->
+    <a href="content_details.html?id=5" class="card">
+      <div class="card-icon"><i class="fas fa-question-circle"></i></div>
+      <h3>Pregnancy Quiz</h3>
+      <p>Test your knowledge and see how much you’ve learned!</p>
+    </a>
+
+  </div>
 </main>
 
+<!-- Footer -->
 <footer class="footer">
   <div class="container">
-    <p>© <span id="year"></span> Teen Pregnancy Support App. All rights reserved.</p>
+    <p>© <span id="year"></span> TeenParent+ — Building bright futures, together 💛</p>
   </div>
 </footer>
 
@@ -43,32 +85,11 @@
   // Update footer year
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Simulate fetching learning resources
-  document.addEventListener('DOMContentLoaded', function() {
-    const contentDiv = document.getElementById('contentLibrary');
-
-    // Dummy content list
-    const contents = [
-      { title: 'Nutrition During Pregnancy', type: 'Article', link: 'content_detail.html?id=1' },
-      { title: 'Safe Exercises for Expectant Teens', type: 'Video', link: 'content_detail.html?id=2' },
-      { title: 'Understanding Labor and Delivery', type: 'Article', link: 'content_detail.html?id=3' },
-      { title: 'Caring for Your Newborn', type: 'Video', link: 'content_detail.html?id=4' },
-      { title: 'Quiz: What Have You Learned?', type: 'Quiz', link: 'content_detail.html?id=5' },
-    ];
-
-    if (contents.length > 0) {
-      let output = '<ul>';
-      contents.forEach(item => {
-        output += `<li><a href="${item.link}"><strong>${item.title}</strong> (${item.type})</a></li>`;
-      });
-      output += '</ul>';
-      contentDiv.innerHTML = output;
-    } else {
-      contentDiv.innerHTML = "<p>No resources available at the moment.</p>";
-    }
+  // Animate fade-slide
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelector('.fade-slide').classList.add('visible');
   });
 </script>
 
 </body>
 </html>
-

@@ -1,51 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teen Pregnancy Support - Welcome</title>
-    <link rel="stylesheet" href="public/css/landing.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TeenParent+ | Support for Expecting Teens</title>
+  <link rel="stylesheet" href="../../../public/css/landing.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
+
 <body>
 
-    <header class="header">
-        <div class="logo">
-            <img src="public/images/logo.png" alt="App Logo">
-        </div>
-        <nav class="nav-links">
-            <a href="modules/auth/pages/login.html" class="btn">Login</a>
-            <a href="modules/auth/pages/register.html" class="btn btn-primary">Sign Up</a>
-        </nav>
-    </header>
+<!-- Navbar -->
+<header class="navbar">
+  <div class="container">
+    <div class="logo">TeenParent+</div>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Support</a>
+      <a href="#resources">Resources</a>
+      <a href="../../../modules/auth/pages/login.html" class="btn">Login</a>
+      <a href="../../../modules/auth/pages/register.html" class="btn-primary">Sign Up</a>
+    </nav>
+  </div>
+</header>
 
-    <main class="main-content">
-        <section class="hero">
-            <h1>Empowering Expectant Teens for a Healthier Future</h1>
-            <p>Track your pregnancy, schedule prenatal visits, get daily health tips, and find emotional support — all in one place.</p>
-            <a href="modules/auth/pages/register.html" class="btn btn-primary">Get Started</a>
-        </section>
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container hero-content">
+    <div class="hero-text">
+      <h1>Support, Strength, and Hope 💛</h1>
+      <p>At TeenParent+, we walk beside young mothers-to-be, offering encouragement, resources, and a path forward.  
+      Every journey is unique, and we’re here to help yours be healthy, informed, and filled with possibilities.</p>
+      <div class="hero-buttons">
+        <a href="../../../modules/auth/pages/register.html" class="btn-primary">Join Our Community</a>
+        <a href="../../../modules/auth/pages/login.html" class="btn">Already Registered?</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="https://undraw.co/api/illustrations/motherhood.svg" alt="Mother and Baby Illustration" loading="lazy">
+    </div>
+  </div>
+</section>
 
-        <section class="features">
-            <div class="feature">
-                <h2>Pregnancy Tracking</h2>
-                <p>Manage important milestones and receive timely reminders for prenatal check-ups.</p>
-            </div>
-            <div class="feature">
-                <h2>Daily Health Guidance</h2>
-                <p>Get personalized nutrition and wellness tips based on your trimester.</p>
-            </div>
-            <div class="feature">
-                <h2>Emotional Support</h2>
-                <p>Access counseling services, join peer support groups, and stay mentally strong.</p>
-            </div>
-        </section>
-    </main>
+<!-- About Section -->
+<section class="about" id="about">
+  <div class="container">
+    <h2>Our Mission</h2>
+    <p>
+      We believe every young mother deserves a future filled with hope, support, and strength.  
+      At TeenParent+, we offer caring guidance, without judgment, to help you build a healthy life 
+      for yourself and your baby.
+    </p>
+    <p>
+      Whether you’re preparing for motherhood, seeking emotional support, or planning your next steps,
+      we are here to empower you with compassion, information, and community.
+    </p>
+  </div>
+</section>
 
-    <footer class="footer">
-        <p>© 2025 Teen Pregnancy Support App. All rights reserved.</p>
-    </footer>
+<!-- Support Services Section -->
+<section class="services" id="services">
+  <div class="container">
+    <h2>How We Support You</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <i class="fas fa-calendar-check"></i>
+        <h3>Prenatal Visit Scheduler</h3>
+        <p>Track your appointments, receive gentle reminders, and learn why each visit matters for you and your baby.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-apple-alt"></i>
+        <h3>Nutrition & Wellness Tips</h3>
+        <p>Receive daily advice on nutritious foods, hydration, and self-care practices to keep you thriving.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-heart"></i>
+        <h3>Emotional Wellness</h3>
+        <p>Explore daily affirmations, access counseling services, and find community support for your emotional journey.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-graduation-cap"></i>
+        <h3>Learning & Growth Resources</h3>
+        <p>Gain knowledge about pregnancy, parenting, and planning for your education and career after motherhood.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <script src="public/js/landing.js"></script>
+<!-- Resources Section -->
+<section class="resources" id="resources">
+  <div class="container">
+    <h2>Helpful Resources for You</h2>
+    <ul class="resource-list">
+      <li> Pregnancy, parenting, and health articles</li>
+      <li> Private support groups for young mothers</li>
+      <li> Baby care guides and breastfeeding tips</li>
+      <li> Personal goal setting and future planning tools</li>
+      <li> School re-entry, scholarships, and education support</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <p>© 2025 TeenParent+ — Building bright futures, together 💛</p>
+  </div>
+</footer>
+
+<!-- JavaScript -->
+<script src="../../../public/js/landing.js"></script>
+
 </body>
 </html>
-

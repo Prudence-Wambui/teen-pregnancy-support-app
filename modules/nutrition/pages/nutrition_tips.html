@@ -1,83 +1,113 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nutrition Tips - Teen Pregnancy Support</title>
-  <link rel="stylesheet" href="../../../public/css/styles.css">
+  <title>Nutrition Tips | TeenParent+</title>
+  <link rel="stylesheet" href="../../../public/css/nutrition_tips.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
 
 <header class="navbar">
   <div class="container">
     <div class="logo">
-      <a href="../../../index.php">Teen Pregnancy Support</a>
+      <i class="fas fa-apple-alt"></i> 
+      <a href="../../../index.php">TeenParent+</a>
     </div>
     <nav class="nav-links">
-      <a href="../../../modules/dashboard/pages/teen_dashboard.html" class="btn">Dashboard</a>
-      <a href="../../../modules/pregnancy/pages/due_date_entry.html" class="btn">Pregnancy</a>
-      <a href="../../../modules/visits/pages/visit_calendar.html" class="btn">Visits</a>
-      <a href="../../../modules/content/pages/content_library.html" class="btn">Learning</a>
-      <a href="../../../modules/notifications/pages/notifications.html" class="btn">Notifications</a>
-      <a href="../../../modules/support/pages/help_center.html" class="btn">Support</a>
-      <a href="../../../modules/auth/logout.php" class="btn btn-primary">Logout</a>
+      <a href="../../../modules/dashboard/pages/teen_dashboard.html">Dashboard</a>
+      <a href="../../../modules/pregnancy/pages/due_date_entry.html">Pregnancy</a>
+      <a href="../../../modules/visits/pages/visit_calendar.html">Visits</a>
+      <a href="../../../modules/content/pages/content_library.html">Learning</a>
+      <a href="../../../modules/notifications/pages/notifications.html">Notifications</a>
+      <a href="../../../modules/support/pages/help_center.html">Support</a>
+      <a href="../../../modules/auth/logout.php" class="btn-primary">Logout</a>
     </nav>
   </div>
 </header>
 
-<main class="auth-container">
-  <h1>Daily Nutrition Tips</h1>
+<main class="main-content">
 
-  <div id="nutritionTips">
+  <!-- Hero / Welcome -->
+  <section class="intro">
+    <h1>🍎 Daily Nutrition Tips</h1>
+    <p>Personalized guidance to nourish you and your growing baby 💛</p>
+  </section>
+
+  <!-- Featured Tip of the Day -->
+  <section class="featured-tip fade-in">
+    <h2>🌟 Tip of the Day</h2>
+    <div class="featured-card">
+      <img src="../../../public/images/avocado.png" alt="Avocado" class="featured-img">
+      <div class="featured-content">
+        <h3>Eat Healthy Fats 🥑</h3>
+        <p>Foods like avocados provide healthy fats for baby's brain development!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hydration Tracker -->
+  <section class="hydration-tracker fade-in">
+    <h2>💧 Hydration Goal</h2>
+    <p>Drink at least 8 glasses today!</p>
+    <div class="progress-bar">
+      <div class="progress" style="width: 50%;"></div>
+    </div>
+  </section>
+
+  <!-- Nutrition Checklist -->
+  <section class="nutrition-checklist fade-in">
+    <h2>✅ Today's Quick Checklist</h2>
+    <ul class="checklist">
+      <li><i class="fas fa-check-circle"></i> Leafy greens</li>
+      <li><i class="fas fa-check-circle"></i> Iron-rich foods</li>
+      <li><i class="fas fa-check-circle"></i> Plenty of water</li>
+    </ul>
+  </section>
+
+  <!-- Nutrition Tips Grid -->
+  <section id="nutritionTips" class="tips-grid fade-in">
     <p>Loading tips based on your trimester...</p>
-  </div>
+  </section>
+
 </main>
 
 <footer class="footer">
   <div class="container">
-    <p>© <span id="year"></span> Teen Pregnancy Support App. All rights reserved.</p>
+    <p>© <span id="year"></span> TeenParent+ — Building bright futures, together 💛</p>
   </div>
 </footer>
 
 <script>
-  // Auto-update footer year
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Dummy trimester logic (later can fetch dynamically from database)
   document.addEventListener('DOMContentLoaded', function() {
     const tipsContainer = document.getElementById('nutritionTips');
-
-    // Example - Trimester 2
     const trimester = 2; 
 
     let tips = '';
 
     if (trimester === 1) {
       tips = `
-        <ul>
-          <li>Eat foods rich in folic acid like spinach and beans.</li>
-          <li>Stay hydrated: Drink at least 8 glasses of water a day.</li>
-          <li>Avoid raw seafood and unpasteurized dairy.</li>
-        </ul>
+        <div class="tip-card">🥬 Eat foods rich in folic acid like spinach and beans.</div>
+        <div class="tip-card">💧 Stay hydrated: Drink at least 8 glasses of water a day.</div>
+        <div class="tip-card">🚫 Avoid raw seafood and unpasteurized dairy.</div>
       `;
     } else if (trimester === 2) {
       tips = `
-        <ul>
-          <li>Increase your calcium intake with milk, yogurt, and leafy greens.</li>
-          <li>Include iron-rich foods like lentils and lean meats.</li>
-          <li>Continue drinking plenty of water to avoid dehydration.</li>
-        </ul>
+        <div class="tip-card">🥛 Increase calcium intake with milk, yogurt, and leafy greens.</div>
+        <div class="tip-card">🥩 Include iron-rich foods like lentils and lean meats.</div>
+        <div class="tip-card">💧 Continue drinking plenty of water to avoid dehydration.</div>
       `;
     } else if (trimester === 3) {
       tips = `
-        <ul>
-          <li>Focus on small, frequent meals to manage heartburn.</li>
-          <li>Consume protein-rich snacks like nuts and eggs.</li>
-          <li>Stay active with light walking if approved by your doctor.</li>
-        </ul>
+        <div class="tip-card">🍽️ Focus on small, frequent meals to manage heartburn.</div>
+        <div class="tip-card">🥚 Consume protein-rich snacks like nuts and eggs.</div>
+        <div class="tip-card">🚶‍♀️ Stay active with light walking if approved by your doctor.</div>
       `;
     } else {
-      tips = "<p>Unable to determine trimester. Please update your pregnancy info.</p>";
+      tips = `<div class="tip-card">Unable to determine trimester. Please update your pregnancy info.</div>`;
     }
 
     tipsContainer.innerHTML = tips;
@@ -86,4 +116,3 @@
 
 </body>
 </html>
-

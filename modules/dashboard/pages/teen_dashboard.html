@@ -3,74 +3,231 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teen Dashboard - Teen Pregnancy Support</title>
-  <link rel="stylesheet" href="../../../public/css/styles.css"> <!-- Assuming external styles -->
+  <title>TeenParent+ Dashboard</title>
+  <link rel="stylesheet" href="../../../public/css/teen_dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
+
 <body>
 
-<header class="navbar">
-  <div class="container">
-    <div class="logo">
-      <a href="../../../index.php">Teen Pregnancy Support</a>
+<!-- Sidebar Navigation -->
+<aside class="sidebar">
+  <div class="logo">TeenParent+</div>
+  <nav>
+    <a href="/dashboard.html" class="active"><i class="fas fa-home"></i> Home</a>
+    <a href="/modules/pregnancy/pages/due_date_entry.html"><i class="fas fa-seedling"></i> Pregnancy</a>
+    <a href="/modules/visits/pages/visit_calendar.html"><i class="fas fa-bell"></i> Reminders</a>
+    <a href="/modules/content/pages/content_library.html"><i class="fas fa-book-reader"></i> Learning</a>
+    <a href="/modules/notifications/pages/notifications.html"><i class="fas fa-envelope"></i> Notifications</a>
+  </nav>
+</aside>
+
+<!-- Top Navbar -->
+<header class="top-navbar">
+  <div class="top-navbar-content">
+    <span>TeenParent+ Dashboard</span>
+    <div class="user-actions">
+      <a href="/modules/auth/logout.php" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
     </div>
-    <nav class="nav-links">
-      <a href="../../../modules/pregnancy/pages/due_date_entry.html" class="btn">Pregnancy</a>
-      <a href="../../../modules/visits/pages/visit_calendar.html" class="btn">Visits</a>
-      <a href="../../../modules/nutrition/pages/nutrition_tips.html" class="btn">Nutrition</a>
-      <a href="../../../modules/content/pages/content_library.html" class="btn">Learning</a>
-      <a href="../../../modules/notifications/pages/notifications.html" class="btn">Notifications</a>
-      <a href="../../../modules/support/pages/help_center.html" class="btn">Support</a>
-      <a href="../../../modules/auth/logout.php" class="btn btn-primary">Logout</a>
-    </nav>
   </div>
 </header>
 
-<main class="auth-container">
-  <h1>Welcome to Your Dashboard</h1>
+<!-- Main Content -->
+<main class="main">
 
-  <section>
-    <h2>Your Pregnancy Progress</h2>
-    <p><strong>Due Date:</strong> <span id="dueDateDisplay">[Due Date Here]</span></p>
-    <p><strong>Weeks Pregnant:</strong> <span id="weeksPregnant">[Weeks Here]</span></p>
+  <!-- Hero Banner -->
+  <section id="hero" class="hero-banner fade-in">
+    <h1>Welcome Back to TeenParent+ 💛</h1>
+    <p>Your journey matters. Let's track and celebrate every step!</p>
   </section>
 
-  <section style="margin-top: 30px;">
-    <h2>Next Important Actions</h2>
-    <ul>
-      <li><a href="../../../modules/visits/pages/schedule_visit.html">Schedule Your Next Prenatal Visit</a></li>
-      <li><a href="../../../modules/nutrition/pages/nutrition_tips.html">View Today's Nutrition Tips</a></li>
-      <li><a href="../../../modules/support/pages/help_center.html">Find Emotional Support Resources</a></li>
-    </ul>
+  <!-- Quick Overview Section -->
+  <section class="overview-section fade-in">
+    <div class="overview-grid">
+      <div class="overview-card donut-card slide-up">
+        <svg class="donut" width="120" height="120">
+          <circle class="donut-ring" r="50" cx="60" cy="60"></circle>
+          <circle class="donut-segment" r="50" cx="60" cy="60" style="stroke-dasharray: 60 40;"></circle>
+        </svg>
+        <div class="donut-text">
+          <h3>24 Weeks</h3>
+          <p>Pregnancy</p>
+        </div>
+      </div>
+
+      <div class="overview-card badge-card slide-up">
+        <div class="badge-circle">3</div>
+        <h3>Appointments</h3>
+        <p>Upcoming Visits Scheduled</p>
+      </div>
+
+      <div class="overview-card checklist-card slide-up">
+        <h3>Nutrition Tips</h3>
+        <ul class="mini-checklist">
+          <li><img src="images/greens.png" alt="Greens"> Eat more greens</li>
+          <li><img src="images/water.png" alt="Water"> Stay hydrated</li>
+          <li><img src="images/iron.png" alt="Iron"> Boost iron intake</li>
+        </ul>
+      </div>
+    </div>
   </section>
+
+  <!-- Pregnancy Progress Section -->
+  <section id="pregnancy-progress" class="pregnancy-progress fade-in">
+    <h2>Pregnancy Growth</h2>
+    <div class="progress-container">
+      <svg class="progress-ring" width="150" height="150">
+        <circle class="progress-ring__circle" stroke="#A68EF1" stroke-width="8" fill="transparent" r="68" cx="75" cy="75"/>
+      </svg>
+      <div class="progress-text">
+        <h3 id="weeks-text">24 Weeks</h3>
+        <p id="trimester-text">2nd Trimester</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Baby Size Tracker -->
+  <section class="baby-size fade-in">
+    <h2>Baby Growth Update</h2>
+    <div class="baby-size-card slide-up">
+      <img src="images/mango.png" alt="Baby Size - Mango">
+      <p>This week: your baby is the size of a <strong>Mango</strong> 🥭</p>
+    </div>
+  </section>
+
+  <!-- Daily Reminders -->
+  <section id="reminders" class="reminders fade-in">
+    <h2>Today's Tasks</h2>
+    <div class="stepper">
+      <div class="step active slide-up">Take Prenatal Vitamins</div>
+      <div class="step slide-up">Light Exercise</div>
+      <div class="step slide-up">Hydration Goal</div>
+    </div>
+  </section>
+
+  <!-- Upcoming Appointments -->
+  <section class="appointments fade-in">
+    <h2>Upcoming Visits</h2>
+    <div class="appointment-cards">
+      <div class="appointment-card slide-up">
+        <img src="images/clinic1.png" alt="ABC Clinic">
+        <div>
+          <h4>ABC Clinic</h4>
+          <p>May 20, 2025</p>
+        </div>
+      </div>
+      <div class="appointment-card slide-up">
+        <img src="images/clinic2.png" alt="Healthy Moms Center">
+        <div>
+          <h4>Healthy Moms Center</h4>
+          <p>June 10, 2025</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mood Tracker -->
+  <section class="mood-tracker fade-in">
+    <h2>Track Your Mood</h2>
+    <div class="mood-options">
+      <label class="mood-choice">
+        <input type="radio" name="mood" value="Happy">
+        <img src="images/happy.png" alt="Happy" class="mood-img">
+        <span>Happy</span>
+      </label>
+      <label class="mood-choice">
+        <input type="radio" name="mood" value="Neutral">
+        <img src="images/neutral.png" alt="Neutral" class="mood-img">
+        <span>Neutral</span>
+      </label>
+      <label class="mood-choice">
+        <input type="radio" name="mood" value="Sad">
+        <img src="images/sad.png" alt="Sad" class="mood-img">
+        <span>Sad</span>
+      </label>
+    </div>
+    <textarea placeholder="Write about your day..."></textarea>
+    <button>Save Mood</button>
+  </section>
+
+  <!-- Daily Affirmation -->
+  <section class="daily-affirmation fade-in">
+    <h2>Today's Affirmation 💛</h2>
+    <blockquote>
+      "Every heartbeat, every movement, every breath — is a miracle growing inside me."
+    </blockquote>
+  </section>
+
+  <!-- Health Tips Carousel -->
+  <section class="health-tips fade-in">
+    <h2>Health Tips</h2>
+    <div class="tips-carousel">
+      <div class="tip active slide-up">Drink at least 8 glasses of water today 💧</div>
+      <div class="tip slide-up">Prioritize sleep for both you and your baby 💤</div>
+      <div class="tip slide-up">Daily light stretching can ease body aches 🤸‍♀️</div>
+    </div>
+  </section>
+
+  <!-- Quick Actions -->
+  <section class="quick-actions fade-in">
+    <h2>Quick Actions</h2>
+    <div class="action-buttons">
+      <button class="quick-btn slide-up"><i class="fas fa-plus-circle"></i> Log New Visit</button>
+      <button class="quick-btn slide-up"><i class="fas fa-heartbeat"></i> Add Symptom</button>
+      <button class="quick-btn slide-up"><i class="fas fa-user-nurse"></i> Ask a Nurse</button>
+    </div>
+  </section>
+
+  <!-- Journal Highlights -->
+  <section class="journal-highlights fade-in">
+    <h2>Recent Journal Entries</h2>
+    <div class="journal-grid">
+      <div class="journal-entry slide-up">
+        <p>"Feeling energized after my checkup!"</p>
+      </div>
+      <div class="journal-entry slide-up">
+        <p>"A little tired today, but grateful."</p>
+      </div>
+      <div class="journal-entry slide-up">
+        <p>"Excited about baby's kicks this week!"</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Learning Center -->
+  <section id="learning-center" class="learning-center fade-in">
+    <h2>Learning Center</h2>
+    <div class="feature-grid">
+      <div class="feature-card gradient-1 slide-up"><i class="fas fa-book-reader"></i><p>Articles</p></div>
+      <div class="feature-card gradient-2 slide-up"><i class="fas fa-video"></i><p>Video Lessons</p></div>
+      <div class="feature-card gradient-3 slide-up"><i class="fas fa-leaf"></i><p>Nutrition Guides</p></div>
+      <div class="feature-card gradient-4 slide-up"><i class="fas fa-heartbeat"></i><p>Mental Wellness</p></div>
+    </div>
+  </section>
+
+  <!-- Notifications -->
+  <section id="notifications" class="notifications fade-in">
+    <h2>Notifications</h2>
+    <div class="toast slide-up">
+      <i class="fas fa-bell"></i> Appointment reminder for tomorrow!
+    </div>
+    <div class="toast slide-up">
+      <i class="fas fa-bell"></i> New nutrition article posted!
+    </div>
+  </section>
+
 </main>
 
+
+<!-- Footer -->
 <footer class="footer">
-  <div class="container">
-    <p>© <span id="year"></span> Teen Pregnancy Support App. All rights reserved.</p>
-  </div>
+  <p>© 2025 TeenParent+ — Building bright futures, together 💛</p>
 </footer>
 
-<script>
-  // Update footer year automatically
-  document.getElementById('year').textContent = new Date().getFullYear();
+<!-- Back to Top Button -->
+<button id="backToTopBtn" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
 
-  // (Dummy Example) Load pregnancy progress (this would normally come from database/session)
-  document.addEventListener('DOMContentLoaded', function() {
-    // Simulate fetching due date from server
-    const dueDateString = localStorage.getItem('due_date') || '2025-01-01'; // default
-    const dueDate = new Date(dueDateString);
-    const today = new Date();
-
-    // Calculate weeks
-    const diffTime = dueDate.getTime() - today.getTime();
-    const weeksLeft = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 7));
-    const weeksPregnant = 40 - weeksLeft;
-
-    document.getElementById('dueDateDisplay').textContent = dueDate.toLocaleDateString();
-    document.getElementById('weeksPregnant').textContent = weeksPregnant > 0 ? `${weeksPregnant} weeks` : "N/A";
-  });
-</script>
+<script src="js/teen_dashboard.js"></script>
 
 </body>
 </html>
-

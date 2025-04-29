@@ -1,1 +1,117 @@
- 
+ /* public/css/auth.css */
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body */
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #f3e5f5, #ffffff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  
+  /* Auth Container */
+  .auth-container {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+  }
+  
+  .auth-container h1 {
+    font-size: 28px;
+    color: #9575cd;
+    margin-bottom: 10px;
+  }
+  
+  .auth-container p {
+    margin-bottom: 25px;
+    color: #666;
+    font-size: 16px;
+  }
+  
+  /* Input Group */
+  .input-group {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .input-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #b39ddb;
+  }
+  
+  .auth-form input,
+  .auth-form select {
+    width: 100%;
+    padding: 12px 15px 12px 45px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fafafa;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.3s;
+  }
+  
+  .auth-form input:focus,
+  .auth-form select:focus {
+    border-color: #b39ddb;
+  }
+  
+  /* Submit Button */
+  .btn-primary {
+    width: 100%;
+    background-color: #b39ddb;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .btn-primary:hover {
+    background-color: #ce93d8;
+  }
+  
+  /* Bottom Text */
+  .bottom-text {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .bottom-text a {
+    color: #7e57c2;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .bottom-text a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Mobile Friendly */
+  @media (max-width: 480px) {
+    .auth-container {
+      padding: 30px 20px;
+    }
+  }
+
+  

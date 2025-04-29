@@ -3,69 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Register - Teen Pregnancy Support</title>
+  <title>Sign Up | TeenParent+</title>
   <link rel="stylesheet" href="../../../public/css/auth.css">
+  <!-- FontAwesome for subtle icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
+
 <body>
 
-<header class="navbar">
-  <div class="container">
-    <div class="logo">
-      <a href="../../../index.php">Teen Pregnancy Support</a>
-    </div>
-    <nav class="nav-links">
-      <a href="login.html" class="btn">Login</a>
-    </nav>
-  </div>
-</header>
-
-<main class="auth-container">
+<!-- Registration Container -->
+<div class="auth-container">
   <h1>Create Your Account</h1>
+  <p>Join a compassionate community ready to walk with you 💛</p>
 
-  <form id="registerForm" action="../register.php" method="POST">
-    <label for="role">I am a:</label>
-    <select id="role" name="role" required>
-      <option value="expectant_teen">Expectant Teen</option>
-      <option value="guardian">Guardian</option>
-    </select>
+  <form action="../../../modules/auth/register.php" method="POST" class="auth-form">
+    <!-- Full Name -->
+    <div class="input-group">
+      <i class="fas fa-user"></i>
+      <input type="text" name="full_name" placeholder="Full Name" required>
+    </div>
 
-    <label for="full_name">Full Name</label>
-    <input type="text" id="full_name" name="full_name" required>
+    <!-- Email Address -->
+    <div class="input-group">
+      <i class="fas fa-envelope"></i>
+      <input type="email" name="email" placeholder="Email Address" required>
+    </div>
 
-    <label for="email">Email Address</label>
-    <input type="email" id="email" name="email" required>
+    <!-- Phone Number -->
+    <div class="input-group">
+      <i class="fas fa-phone"></i>
+      <input type="text" name="phone_number" placeholder="Phone Number (Optional)">
+    </div>
 
-    <label for="phone_number">Phone Number</label>
-    <input type="text" id="phone_number" name="phone_number">
+    <!-- Date of Birth -->
+    <div class="input-group">
+      <i class="fas fa-calendar"></i>
+      <input type="date" name="date_of_birth" required>
+    </div>
 
-    <label for="date_of_birth">Date of Birth</label>
-    <input type="date" id="date_of_birth" name="date_of_birth" required>
+    <!-- Role Selection -->
+    <!-- Role Selection -->
+<div class="input-group">
+  <i class="fas fa-user-tag"></i>
+  <select name="role" required class="select-role">
+    <option value="">Select Role</option>
+    <option value="Expectant Teen"> Expectant Teen</option>
+    <option value="Guardian"> Guardian</option>
+  </select>
+</div>
 
-    <label for="password">Password</label>
-    <input type="password" id="password" name="password" required minlength="6">
 
-    <label for="confirm_password">Confirm Password</label>
-    <input type="password" id="confirm_password" name="confirm_password" required minlength="6">
+    <!-- Password -->
+    <div class="input-group">
+      <i class="fas fa-lock"></i>
+      <input type="password" name="password" placeholder="Create Password" required>
+    </div>
 
-    <button type="submit" class="btn-primary">Register</button>
+    <!-- Confirm Password -->
+    <div class="input-group">
+      <i class="fas fa-lock"></i>
+      <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+    </div>
 
-    <p class="auth-link">
-      Already have an account? <a href="login.html">Login</a>
-    </p>
+    <!-- Submit Button -->
+    <button type="submit" class="btn-primary">Create Account</button>
   </form>
-</main>
 
-<footer class="footer">
-  <div class="container">
-    <p>© <span id="year"></span> Teen Pregnancy Support App. All rights reserved.</p>
-  </div>
-</footer>
-
-<script src="../../../public/js/auth.js"></script>
-<script>
-  // Update year automatically
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+  <p class="bottom-text">
+    Already have an account? 
+    <a href="../../../modules/auth/login.html">Login here</a>
+  </p>
+</div>
 
 </body>
 </html>

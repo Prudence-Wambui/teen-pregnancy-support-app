@@ -1,1 +1,213 @@
- 
+/* public/css/landing.css */
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body */
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fcfdfd;
+    color: #444;
+    line-height: 1.6;
+  }
+  
+  /* Container Utility */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Navbar */
+  .navbar {
+    background-color: #ffffff;
+    padding: 15px 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #b39ddb;
+  }
+  
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #b39ddb;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  
+  .nav-links .btn {
+    border: 1px solid #b39ddb;
+  }
+  
+  .nav-links .btn-primary {
+    background-color: #b39ddb;
+    color: #ffffff;
+  }
+  
+  .nav-links .btn:hover,
+  .nav-links .btn-primary:hover {
+    background-color: #ce93d8;
+    color: #ffffff;
+  }
+  
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(to right, #f3e5f5, #ffffff);
+    padding: 80px 0;
+  }
+  
+  .hero-content {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  
+  .hero-text {
+    flex: 1 1 400px;
+  }
+  
+  .hero-text h1 {
+    font-size: 40px;
+    color: #9575cd;
+    margin-bottom: 20px;
+  }
+  
+  .hero-text p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 25px;
+  }
+  
+  .hero-buttons a {
+    margin-right: 15px;
+    font-size: 16px;
+  }
+  
+  /* Hero Image */
+  .hero-image {
+    flex: 1 1 400px;
+    text-align: center;
+  }
+  
+  .hero-image img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Sections (About, Services, Resources) */
+  section {
+    padding: 80px 0;
+    text-align: center;
+  }
+  
+  section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #9575cd;
+  }
+  
+  section p {
+    max-width: 700px;
+    margin: 0 auto 20px;
+    color: #666;
+    font-size: 18px;
+  }
+  
+  /* Services Cards */
+  .services-grid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+  }
+  
+  .service-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  }
+  
+  .service-card i {
+    font-size: 40px;
+    color: #9575cd;
+    margin-bottom: 15px;
+  }
+  
+  .service-card h3 {
+    margin-bottom: 10px;
+    color: #b39ddb;
+    font-size: 22px;
+  }
+  
+  .service-card p {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  /* Resource List */
+  .resource-list {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 40px auto 0;
+    text-align: left;
+  }
+  
+  .resource-list li {
+    margin: 15px 0;
+    font-size: 18px;
+  }
+  
+  /* Footer */
+  .footer {
+    background: #ffffff;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #9575cd;
+    box-shadow: 0 -2px 6px rgba(0,0,0,0.05);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .hero-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .hero-text h1 {
+      font-size: 32px;
+    }
+  
+    .hero-buttons {
+      justify-content: center;
+    }
+  }
+  

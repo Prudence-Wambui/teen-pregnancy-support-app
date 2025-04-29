@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning Content | TeenParent+</title>
+  <link rel="stylesheet" href="../../../public/css/content_details.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+
+<!-- Header -->
+<header class="navbar">
+  <div class="container navbar-container">
+    <div class="logo">
+      <a href="../../../index.php">
+        <i class="fas fa-baby-carriage"></i> TeenParent+
+      </a>
+    </div>
+
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" class="menu-icon">
+      <i class="fas fa-bars"></i>
+    </label>
+
+    <nav class="nav-links">
+      <a href="../../../modules/content/pages/content_library.html"><i class="fas fa-book-open"></i> Library</a>
+      <a href="../../../modules/support/pages/help_center.html"><i class="fas fa-hands-helping"></i> Support</a>
+      <a href="../../../modules/auth/logout.php" class="btn-primary"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Main Content -->
+<main class="auth-container fade-slide">
+  <div class="illustration">
+    <img src="https://undraw.co/api/illustrations/online-learning.svg" alt="Learning Illustration" loading="lazy">
+  </div>
+
+  <h1 id="contentTitle">Loading Content...</h1>
+
+  <div id="contentBody" class="content-body">
+    <p>Loading, please wait...</p>
+  </div>
+
+  <p class="auth-link">
+    <a href="content_library.html">← Back to Content Library</a>
+  </p>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <p>© <span id="year"></span> TeenParent+ — Empowering Your Journey 💛</p>
+  </div>
+</footer>
+
+<script>document.addEventListener('DOMContentLoaded', function() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const contentId = urlParams.get('id');
+
+  const contents = {
+    1: {
+      title: '🥗 Nutrition During Pregnancy',
+      body: '<p>Eating well during pregnancy is essential for both you and your growing baby. Focus on colorful fruits, veggies, proteins, and grains for full nourishment.</p>'
+    },
+    2: {
+      title: '🏃‍♀️ Safe Exercises for Expectant Teens',
+      body: '<iframe width="100%" height="315" src="https://www.youtube.com/embed/vH2P0qU4E90" frameborder="0" allowfullscreen></iframe>'
+    },
+    3: {
+      title: '🤱 Understanding Labor and Delivery',
+      body: '<p>Labor and delivery are natural and powerful. Learn how each stage unfolds, and how you can feel more prepared and confident welcoming your little one.</p>'
+    },
+    4: {
+      title: '🍼 Caring for Your Newborn',
+      body: '<p>Newborns thrive on love, patience, and gentle care. Master the basics of feeding, sleeping, and diapering your beautiful baby!</p>'
+    },
+    5: {
+      title: '📝 Quiz: How Much Have You Learned?',
+      body: '<p><strong>Quiz Time!</strong> Test yourself on all you\'ve learned about healthy pregnancy and baby care. You\'re doing amazing! 💛</p>'
+    }
+  };
+
+  if (contents[contentId]) {
+    document.getElementById('contentTitle').innerHTML = contents[contentId].title;
+    document.getElementById('contentBody').innerHTML = contents[contentId].body;
+  } else {
+    document.getElementById('contentTitle').innerHTML = 'Content Not Found';
+    document.getElementById('contentBody').innerHTML = '<p>Sorry, we couldn’t find what you were looking for. 💬</p>';
+  }
+});
+</script>
+
+<!-- JavaScript to Dynamically Load Content and Animate -->
+<script>
+  // Update footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Fade-slide animation when page loads
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelector('.fade-slide').classList.add('visible');
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const contentId = urlParams.get('id');
+
+    const contents = {
+      1: {
+        title: '🥗 Nutrition During Pregnancy',
+        body: '<p>Eating well during pregnancy is essential for both you and your growing baby. Focus on colorful fruits, veggies, proteins, and grains for full nourishment.</p>'
+      },
+      2: {
+        title: '🏃‍♀️ Safe Exercises for Expectant Teens',
+        body: '<iframe width="100%" height="315" src="https://www.youtube.com/embed/vH2P0qU4E90" frameborder="0" allowfullscreen></iframe>'
+      },
+      3: {
+        title: '🤱 Understanding Labor and Delivery',
+        body: '<p>Labor and delivery are natural and powerful. Learn how each stage unfolds, and how you can feel more prepared and confident welcoming your little one.</p>'
+      },
+      4: {
+        title: '🍼 Caring for Your Newborn',
+        body: '<p>Newborns thrive on love, patience, and gentle care. Master the basics of feeding, sleeping, and diapering your beautiful baby!</p>'
+      },
+      5: {
+        title: '📝 Quiz: How Much Have You Learned?',
+        body: '<p><strong>Quiz Time!</strong> Test yourself on all you\'ve learned about healthy pregnancy and baby care. You\'re doing amazing! 💛</p>'
+      }
+    };
+
+    if (contents[contentId]) {
+      document.getElementById('contentTitle').innerHTML = contents[contentId].title;
+      document.getElementById('contentBody').innerHTML = contents[contentId].body;
+    } else {
+      document.getElementById('contentTitle').innerHTML = 'Content Not Found';
+      document.getElementById('contentBody').innerHTML = '<p>Sorry, we couldn’t find what you were looking for. 💬</p>';
+    }
+  });
+</script>
+
+</body>
+</html>

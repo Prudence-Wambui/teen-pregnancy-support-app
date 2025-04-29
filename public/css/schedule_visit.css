@@ -1,0 +1,170 @@
+/* ========== Reset and Base ========== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom right, #fdf9ff, #ffffff);
+    color: #444;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #7b5fd6;
+  }
+  
+  /* ========== Navbar ========== */
+  .navbar {
+    background: #fff;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #7b5fd6;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .nav-links a {
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: 0.3s;
+  }
+  
+  .nav-links a:hover,
+  .nav-links .btn-primary {
+    background: #7b5fd6;
+    color: #fff;
+  }
+  
+  /* ========== Main Container ========== */
+  .auth-container {
+    max-width: 700px;
+    margin: 3rem auto;
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(123, 95, 214, 0.08);
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+  
+  .auth-container h1 {
+    text-align: center;
+    color: #7b5fd6;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* ========== Form Styling ========== */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  form label {
+    font-weight: 500;
+    color: #555;
+    font-size: 1rem;
+  }
+  
+  form input,
+  form textarea {
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #f7f4ff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  form input:focus,
+  form textarea:focus {
+    outline: none;
+    border-color: #7b5fd6;
+    box-shadow: 0 0 0 3px rgba(123, 95, 214, 0.1);
+  }
+  
+  /* ========== Button ========== */
+  button.btn-primary {
+    background-color: #7b5fd6;
+    color: #fff;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  button.btn-primary:hover {
+    background-color: #6a4bcf;
+  }
+  
+  /* ========== Link Note ========== */
+  .auth-link {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.95rem;
+  }
+  
+  .auth-link a {
+    text-decoration: underline;
+    color: #7b5fd6;
+  }
+  
+  /* ========== Footer ========== */
+  .footer {
+    background: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: auto;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* ========== Animation ========== */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* ========== Responsive ========== */
+  @media (max-width: 768px) {
+    .auth-container {
+      margin: 2rem 1rem;
+      padding: 2rem 1.5rem;
+    }
+  
+    .nav-links {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+  

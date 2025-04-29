@@ -1,0 +1,220 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Global Styles */
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom right, #f8f3fc, #fff);
+    color: #555;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #7b5fd6;
+  }
+  
+  h1, h2, h3 {
+    color: #7b5fd6;
+  }
+  
+  /* Navbar */
+  .navbar {
+    background: #fff;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar .logo a {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #7b5fd6;
+  }
+  
+  .navbar .nav-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .navbar .nav-links a {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    transition: background 0.3s;
+  }
+  
+  .navbar .nav-links a:hover,
+  .navbar .nav-links .btn-primary {
+    background: #7b5fd6;
+    color: #fff;
+  }
+  
+  /* Main Content */
+  .main-content {
+    padding: 2rem;
+    flex-grow: 1;
+  }
+  
+  /* Intro Section */
+  .intro {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .intro h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .intro p {
+    font-size: 1.2rem;
+  }
+  
+  /* Featured Tip Card */
+  .featured-tip {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .featured-card {
+    background: #f2efff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    box-shadow: 0 4px 10px rgba(123, 95, 214, 0.15);
+    margin-top: 1rem;
+  }
+  
+  .featured-img {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .featured-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Hydration Tracker */
+  .hydration-tracker {
+    margin: 2rem 0;
+    text-align: center;
+  }
+  
+  .progress-bar {
+    background: #e0e0e0;
+    border-radius: 50px;
+    height: 20px;
+    width: 80%;
+    margin: 0.5rem auto;
+    overflow: hidden;
+  }
+  
+  .progress {
+    background: #7b5fd6;
+    height: 100%;
+    width: 0;
+    transition: width 1s ease-in-out;
+  }
+  
+  /* Checklist */
+  .nutrition-checklist {
+    margin-bottom: 2rem;
+  }
+  
+  .checklist {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+  
+  .checklist li {
+    background: #faf8ff;
+    border: 1px solid #e0dff8;
+    padding: 0.8rem 1.2rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  /* Nutrition Tips Grid */
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .tip-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .tip-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Footer */
+  .footer {
+    background: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: 2rem;
+    box-shadow: 0 -2px 6px rgba(0,0,0,0.05);
+  }
+  
+  /* Animations */
+  .fade-in {
+    animation: fadeIn 1s ease-in forwards;
+    opacity: 0;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Mobile */
+  @media (max-width: 768px) {
+    .featured-card {
+      flex-direction: column;
+    }
+  
+    .progress-bar {
+      width: 100%;
+    }
+  
+    .checklist {
+      flex-direction: column;
+    }
+  }
+  

@@ -1,0 +1,165 @@
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom right, #fdf8ff, #ffffff);
+    color: #555;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #7b5fd6;
+  }
+  
+  h1, h2, h3 {
+    color: #7b5fd6;
+  }
+  
+  /* Navbar */
+  .navbar {
+    background: #fff;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+  
+  .navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar .logo a {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #7b5fd6;
+  }
+  
+  .navbar .nav-links {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .navbar .nav-links a {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: 0.3s;
+  }
+  
+  .navbar .nav-links a:hover,
+  .navbar .nav-links .btn-primary {
+    background: #7b5fd6;
+    color: white;
+  }
+  
+  /* Container */
+  .auth-container {
+    flex: 1;
+    padding: 2rem;
+    max-width: 900px;
+    margin: 2rem auto;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(123, 95, 214, 0.08);
+    animation: fadeIn 0.7s ease;
+  }
+  
+  .auth-container h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
+  
+  /* Visit Calendar */
+  #visitCalendar {
+    background: #f9f6ff;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  }
+  
+  #visitCalendar ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  #visitCalendar li {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: #fff;
+    border-left: 5px solid #7b5fd6;
+    border-radius: 10px;
+    font-size: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    transition: 0.3s ease;
+  }
+  
+  #visitCalendar li:hover {
+    transform: scale(1.02);
+    background: #f2edff;
+  }
+  
+  /* Link Below Calendar */
+  .auth-link {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.95rem;
+  }
+  
+  .auth-link a {
+    color: #7b5fd6;
+    font-weight: 500;
+    text-decoration: underline;
+  }
+  
+  /* Footer */
+  .footer {
+    background: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    color: #888;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.04);
+    margin-top: auto;
+  }
+  
+  /* Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .auth-container {
+      margin: 1rem;
+      padding: 1.5rem;
+    }
+  
+    .navbar .nav-links {
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+  
+    #visitCalendar {
+      padding: 1rem;
+    }
+  }
+  
