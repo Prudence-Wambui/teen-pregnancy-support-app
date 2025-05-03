@@ -1,115 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TeenParent+ | Support for Expecting Teens</title>
-  <link rel="stylesheet" href="../../../public/css/landing.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-</head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TeenParent+ - Support for Young Mothers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="../../../public/css/theme.css">
+  <link rel="stylesheet" href="../../../public/css/landing.css">  
+  <script src="../../../public/js/landing.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css">
+  <script src="https://cdn.lordicon.com/lordicon.js"></script>
 
+</head>
 <body>
 
-<!-- Navbar -->
-<header class="navbar">
-  <div class="container">
+  <!-- Header -->
+  <header>
     <div class="logo">TeenParent+</div>
-    <nav class="nav-links">
-      <a href="#about">About</a>
-      <a href="#services">Support</a>
-      <a href="#resources">Resources</a>
-      <a href="../../../modules/auth/pages/login.html" class="btn">Login</a>
-      <a href="../../../modules/auth/pages/register.html" class="btn-primary">Sign Up</a>
+    <nav>
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#about">Why Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
-  </div>
-</header>
+  </header>
 
-<!-- Hero Section -->
-<section class="hero">
-  <div class="container hero-content">
-    <div class="hero-text">
-      <h1>Support, Strength, and Hope 💛</h1>
-      <p>At TeenParent+, we walk beside young mothers-to-be, offering encouragement, resources, and a path forward.  
-      Every journey is unique, and we’re here to help yours be healthy, informed, and filled with possibilities.</p>
-      <div class="hero-buttons">
-        <a href="../../../modules/auth/pages/register.html" class="btn-primary">Join Our Community</a>
-        <a href="../../../modules/auth/pages/login.html" class="btn">Already Registered?</a>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-left">
+      <h1>Your Journey, Our Support – TeenParent+</h1>
+      <p>We walk beside young mothers-to-be, offering encouragement, resources, and a path forward.</p>
+      <div class="cta-buttons-left">
+        <button onclick="location.href='../../../modules/auth/pages/register.html'" class="cta-btn first">Join Our Community</button>
+        <button onclick="location.href='../../../modules/auth/pages/login.html'" class="cta-btn second">Already Registered?</button>
       </div>
     </div>
-    <div class="hero-image">
-      <img src="https://undraw.co/api/illustrations/motherhood.svg" alt="Mother and Baby Illustration" loading="lazy">
+    <div class="hero-right">
+      <img src="../../../public/images/hero.png" alt="Teen mothers illustration" class="hero-image-fill">
     </div>
-  </div>
-</section>
+  </section>
+  
+  
 
-<!-- About Section -->
-<section class="about" id="about">
-  <div class="container">
-    <h2>Our Mission</h2>
-    <p>
-      We believe every young mother deserves a future filled with hope, support, and strength.  
-      At TeenParent+, we offer caring guidance, without judgment, to help you build a healthy life 
-      for yourself and your baby.
-    </p>
-    <p>
-      Whether you’re preparing for motherhood, seeking emotional support, or planning your next steps,
-      we are here to empower you with compassion, information, and community.
-    </p>
-  </div>
-</section>
-
-<!-- Support Services Section -->
-<section class="services" id="services">
-  <div class="container">
-    <h2>How We Support You</h2>
-    <div class="services-grid">
-      <div class="service-card">
-        <i class="fas fa-calendar-check"></i>
-        <h3>Prenatal Visit Scheduler</h3>
-        <p>Track your appointments, receive gentle reminders, and learn why each visit matters for you and your baby.</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-apple-alt"></i>
-        <h3>Nutrition & Wellness Tips</h3>
-        <p>Receive daily advice on nutritious foods, hydration, and self-care practices to keep you thriving.</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-heart"></i>
-        <h3>Emotional Wellness</h3>
-        <p>Explore daily affirmations, access counseling services, and find community support for your emotional journey.</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-graduation-cap"></i>
-        <h3>Learning & Growth Resources</h3>
-        <p>Gain knowledge about pregnancy, parenting, and planning for your education and career after motherhood.</p>
-      </div>
+  <!-- Features Section -->
+<section id="features" class="features-section">
+  <h2>Explore Our Features</h2>
+  <div class="grid-4">
+    <div class="card feature-card">
+      <img src="../../../public/images/pregnancy-tracker.png" alt="Pregnancy Tracker Illustration" class="feature-img">
+      <h3>Pregnancy Tracker</h3>
+      <p>Watch your baby’s size grow each week with visual updates and tips.</p>
+    </div>
+    <div class="card feature-card">
+      <img src="../../../public/images/visit-scheduler.png" alt="Visit Scheduler Illustration" class="feature-img">
+      <h3>Visit Scheduler</h3>
+      <p>Book, track, and be reminded of your medical appointments with ease.</p>
+    </div>
+    <div class="card feature-card">
+      <img src="../../../public/images/mental-health.png" alt="Mental Health Illustration" class="feature-img">
+      <h3>Mental Health Tools</h3>
+      <p>Log your mood and get encouragement when you need it most.</p>
+    </div>
+    <div class="card feature-card">
+      <img src="../../../public/images/educational-content.png" alt="Educational Content Illustration" class="feature-img">
+      <h3>Educational Content</h3>
+      <p>Curated articles about pregnancy, parenting, and self-care.</p>
     </div>
   </div>
 </section>
 
-<!-- Resources Section -->
-<section class="resources" id="resources">
-  <div class="container">
-    <h2>Helpful Resources for You</h2>
-    <ul class="resource-list">
-      <li> Pregnancy, parenting, and health articles</li>
-      <li> Private support groups for young mothers</li>
-      <li> Baby care guides and breastfeeding tips</li>
-      <li> Personal goal setting and future planning tools</li>
-      <li> School re-entry, scholarships, and education support</li>
-    </ul>
+<!-- Why Us Section -->
+<section id="about" class="features-section">
+  <h2>Why TeenParent+?</h2>
+  <div class="grid-4">
+    <div class="card feature-card">
+      <img src="../../../public/images/emotional-support.png" alt="Emotional Support Illustration" class="feature-img">
+      <h3>Emotional Support</h3>
+      <p>We provide a safe space with tips to support your mental well-being.</p>
+    </div>
+    <div class="card feature-card">
+      <img src="../../../public/images/visit-reminders.png" alt="Visit Reminder Illustration" class="feature-img">
+      <h3>Medical Visit Reminders</h3>
+      <p>Never miss a check-up with our automated reminders.</p>
+    </div>
+    <div class="card feature-card">
+      <img src="../../../public/images/baby-growth.png" alt="Baby Growth Illustration" class="feature-img">
+      <h3>Baby Growth Tracker</h3>
+      <p>Visualize your baby’s growth week by week.</p>
+    </div>
+    <div class="card feature-card">
+      <img src="../../../public/images/nutrition-tips.png" alt="Nutrition Tips Illustration" class="feature-img">
+      <h3>Nutrition Tips</h3>
+      <p>Get friendly advice on eating well during pregnancy.</p>
+    </div>
   </div>
 </section>
 
-<!-- Footer -->
-<footer class="footer">
-  <div class="container">
-    <p>© 2025 TeenParent+ — Building bright futures, together 💛</p>
+<!-- Carousel Section -->
+<section class="carousel-section">
+  <h2 class="carousel-title">💗 Real Stories, Real Strength</h2>
+  <div class="carousel-wrapper">
+    <div class="carousel-slide active">
+      <p>"TeenParent+ helped me feel seen and supported. It changed my outlook!"</p>
+      <span>— Zawadi, 16</span>
+    </div>
+    <div class="carousel-slide">
+      <p>"The app makes my day easier — reminders, tips, and positivity!"</p>
+      <span>— Aisha, 17</span>
+    </div>
+    <div class="carousel-slide">
+      <p>"From nutrition tips to mood tracking — I feel in control again."</p>
+      <span>— Nyambura, 15</span>
+    </div>
+    <div class="carousel-controls">
+      <button class="carousel-dot active" data-index="0"></button>
+      <button class="carousel-dot" data-index="1"></button>
+      <button class="carousel-dot" data-index="2"></button>
+    </div>
   </div>
-</footer>
+</section>
 
-<!-- JavaScript -->
-<script src="../../../public/js/landing.js"></script>
+
+  <!-- Contact / Footer -->
+  <footer id="contact">
+    <div class="footer-grid">
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Privacy</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Stay Connected</h4>
+        <p>Follow us on Instagram · TikTok · YouTube</p>
+        <p>Email: <a href="mailto:help@teenparentplus.com">help@teenparentplus.com</a></p>
+      </div>
+    </div>
+    <div class="footer-copy text-center">© 2025 TeenParent+</div>
+  </footer>
+
+  <script>
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.carousel-dot');
+  
+    let current = 0;
+  
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        dots[i].classList.remove('active');
+      });
+      slides[index].classList.add('active');
+      dots[index].classList.add('active');
+      current = index;
+    }
+  
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        showSlide(parseInt(dot.dataset.index));
+      });
+    });
+  
+    setInterval(() => {
+      const next = (current + 1) % slides.length;
+      showSlide(next);
+    }, 8000);
+  </script>
+  
 
 </body>
 </html>

@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap');
+
+:root {
+  --bg-color: #FFFDF8;
+  --text-color: #1F2D37;
+  --text-muted: #4D5C6D;
+  --accent-peach: #FFD8DC;
+  --accent-green: #C7E8E1;
+  --accent-blue: #D6EAF8;
+  --primary: #0F4C5C;
+  --card-radius: 16px;
+  --shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  --transition: all 0.3s ease;
+}
+
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  scroll-behavior: smooth;
+}
+
+/* Shared layout components */
+section, header, footer {
+  padding: 2rem;
+}
+
+/* Headings */
+h1, h2, h3 {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* Buttons */
+.btn {
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background-color: var(--accent-green);
+  color: var(--text-color);
+}
+
+.btn-secondary {
+  background-color: var(--accent-blue);
+  color: var(--text-color);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+/* Card Styles */
+.card {
+  background-color: white;
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: scale(1.02);
+  background-color: var(--accent-blue);
+}
+
+/* Footer */
+footer {
+  background-color: #FAF9F6;
+  padding: 3rem 2rem;
+  color: var(--text-muted);
+  border-top: 1px solid #eee;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+/* Responsive grid */
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Utility Classes */
+.text-muted {
+  color: var(--text-muted);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}

@@ -1,42 +1,50 @@
- // public/js/landing.js
-
-// Smooth scroll when user clicks "Get Started" or "Login"
-document.addEventListener('DOMContentLoaded', function() {
-    const links = document.querySelectorAll('a[href^="#"]');
-
-    links.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-        });
+document.addEventListener('DOMContentLoaded', () => {
+    // === CAROUSEL FUNCTIONALITY ===
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.carousel-dot');
+    let current = 0;
+  
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        dots[i].classList.remove('active');
+      });
+      slides[index].classList.add('active');
+      dots[index].classList.add('active');
+      current = index;
+    }
+  
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        showSlide(parseInt(dot.dataset.index));
+      });
     });
-});
-
-// Animate Hero Section Text on Load
-window.addEventListener('load', () => {
-    const heroSection = document.querySelector('.hero');
-    if (heroSection) {
-        heroSection.style.opacity = 0;
-        heroSection.style.transform = "translateY(50px)";
-        setTimeout(() => {
-            heroSection.style.transition = "all 1s ease";
-            heroSection.style.opacity = 1;
-            heroSection.style.transform = "translateY(0)";
-        }, 200);
-    }
-});
-
-// Update Footer Year Automatically
-document.addEventListener('DOMContentLoaded', function() {
-    const footer = document.querySelector('.footer p');
-    if (footer) {
-        const currentYear = new Date().getFullYear();
-        footer.innerHTML = `© ${currentYear} Teen Pregnancy Support App. All rights reserved.`;
-    }
-});
-
+  
+    setInterval(() => {
+      const next = (current + 1) % slides.length;
+      showSlide(next);
+    }, 8000);
+  
+    // === SMOOTH SCROLL NAVIGATION ===
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const target = document.querySelector(targetId);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  
+    // === CTA BUTTON LOGIC (optional custom behavior)
+    const ctaButtons = document.querySelectorAll('.cta-btn');
+    ctaButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Replace this with real redirect or logic
+        // window.location.href = "/register.html"; 
+      });
+    });
+  });
+  

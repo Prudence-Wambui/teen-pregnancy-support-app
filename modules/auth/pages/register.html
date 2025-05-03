@@ -1,79 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign Up | TeenParent+</title>
-  <link rel="stylesheet" href="../../../public/css/auth.css">
-  <!-- FontAwesome for subtle icons -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Create Account - TeenParent+</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/public/css/theme.css">
+  <link rel="stylesheet" href="/public/css/register.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
-
 <body>
-
-<!-- Registration Container -->
-<div class="auth-container">
-  <h1>Create Your Account</h1>
-  <p>Join a compassionate community ready to walk with you 💛</p>
-
-  <form action="../../../modules/auth/register.php" method="POST" class="auth-form">
-    <!-- Full Name -->
-    <div class="input-group">
-      <i class="fas fa-user"></i>
-      <input type="text" name="full_name" placeholder="Full Name" required>
+  <div class="register-container">
+    <!-- Left Illustration -->
+    <div class="register-illustration">
+      <h2>Join TeenParent+</h2>
+      <p>We're here to walk this journey with you 💛</p>
+      <img src="/public/images/register-illustration.png" alt="Join Community Illustration" />
     </div>
 
-    <!-- Email Address -->
-    <div class="input-group">
-      <i class="fas fa-envelope"></i>
-      <input type="email" name="email" placeholder="Email Address" required>
+    <!-- Right Registration Form -->
+    <div class="register-form">
+      <h2>Create Your Account</h2>
+      <form id="registerForm" action="/register" method="POST">
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" name="fullName" placeholder="e.g. Zawadi Njeri" required />
+          <span class="error-msg"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required />
+          <span class="error-msg"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="role">Select Role</label>
+          <select id="role" required>
+            <option value="">-- Choose --</option>
+            <option value="teen">Teen</option>
+            <option value="guardian">Guardian</option>
+            <option value="admin">Admin</option>
+          </select>
+          <span class="error-msg"></span>
+        </div>
+        
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="password-wrapper">
+            <input type="password" id="password" name="password" required />
+            <i class="fas fa-eye toggle-password" id="togglePassword"></i>
+          </div>
+          <div class="error-msg" id="passwordError"></div>
+        </div>
+        
+        
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <div class="password-wrapper">
+            <input type="password" id="confirmPassword" name="confirmPassword" required />
+            <i class="fas fa-eye toggle-password" id="toggleConfirmPassword"></i>
+          </div>
+          <div class="error-msg" id="confirmPasswordError"></div>
+        </div>
+        
+        
+
+        <button type="submit" class="btn-register">
+          <span class="spinner" style="display: none;"></span>
+          Sign Up
+        </button>
+
+        <p class="auth-switch">Already have an account? <a href="../../../modules/auth/pages/login.html">Login here</a></p>
+      </form>
     </div>
+  </div>
 
-    <!-- Phone Number -->
-    <div class="input-group">
-      <i class="fas fa-phone"></i>
-      <input type="text" name="phone_number" placeholder="Phone Number (Optional)">
-    </div>
-
-    <!-- Date of Birth -->
-    <div class="input-group">
-      <i class="fas fa-calendar"></i>
-      <input type="date" name="date_of_birth" required>
-    </div>
-
-    <!-- Role Selection -->
-    <!-- Role Selection -->
-<div class="input-group">
-  <i class="fas fa-user-tag"></i>
-  <select name="role" required class="select-role">
-    <option value="">Select Role</option>
-    <option value="Expectant Teen"> Expectant Teen</option>
-    <option value="Guardian"> Guardian</option>
-  </select>
-</div>
-
-
-    <!-- Password -->
-    <div class="input-group">
-      <i class="fas fa-lock"></i>
-      <input type="password" name="password" placeholder="Create Password" required>
-    </div>
-
-    <!-- Confirm Password -->
-    <div class="input-group">
-      <i class="fas fa-lock"></i>
-      <input type="password" name="confirm_password" placeholder="Confirm Password" required>
-    </div>
-
-    <!-- Submit Button -->
-    <button type="submit" class="btn-primary">Create Account</button>
-  </form>
-
-  <p class="bottom-text">
-    Already have an account? 
-    <a href="../../../modules/auth/login.html">Login here</a>
-  </p>
-</div>
+  <script src="../../../public/js/register.js"></script>
 
 </body>
 </html>

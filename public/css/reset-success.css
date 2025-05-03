@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+    background-color: #FFF5F0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .success-container {
+    text-align: center;
+  }
+  
+  .success-card {
+    background: #fff;
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    max-width: 400px;
+  }
+  
+  .success-card img {
+    width: 100px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .success-card h2 {
+    color: #5C4A3D;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .success-card p {
+    color: #6B4C3B;
+    margin-bottom: 2rem;
+  }
+  
+  .btn-back {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #F08D5D;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+  }
+  
+  .btn-back:hover {
+    background-color: #D07B58;
+  }
+  

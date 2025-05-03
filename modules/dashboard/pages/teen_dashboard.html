@@ -1,233 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TeenParent+ Dashboard</title>
-  <link rel="stylesheet" href="../../../public/css/teen_dashboard.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Teen Dashboard - TeenParent+</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../../../public/css/dashboard.css" />
 </head>
-
 <body>
-
-<!-- Sidebar Navigation -->
-<aside class="sidebar">
-  <div class="logo">TeenParent+</div>
-  <nav>
-    <a href="/dashboard.html" class="active"><i class="fas fa-home"></i> Home</a>
-    <a href="/modules/pregnancy/pages/due_date_entry.html"><i class="fas fa-seedling"></i> Pregnancy</a>
-    <a href="/modules/visits/pages/visit_calendar.html"><i class="fas fa-bell"></i> Reminders</a>
-    <a href="/modules/content/pages/content_library.html"><i class="fas fa-book-reader"></i> Learning</a>
-    <a href="/modules/notifications/pages/notifications.html"><i class="fas fa-envelope"></i> Notifications</a>
-  </nav>
-</aside>
-
-<!-- Top Navbar -->
-<header class="top-navbar">
-  <div class="top-navbar-content">
-    <span>TeenParent+ Dashboard</span>
-    <div class="user-actions">
-      <a href="/modules/auth/logout.php" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
-    </div>
-  </div>
-</header>
-
-<!-- Main Content -->
-<main class="main">
-
-  <!-- Hero Banner -->
-  <section id="hero" class="hero-banner fade-in">
-    <h1>Welcome Back to TeenParent+ 💛</h1>
-    <p>Your journey matters. Let's track and celebrate every step!</p>
-  </section>
-
-  <!-- Quick Overview Section -->
-  <section class="overview-section fade-in">
-    <div class="overview-grid">
-      <div class="overview-card donut-card slide-up">
-        <svg class="donut" width="120" height="120">
-          <circle class="donut-ring" r="50" cx="60" cy="60"></circle>
-          <circle class="donut-segment" r="50" cx="60" cy="60" style="stroke-dasharray: 60 40;"></circle>
-        </svg>
-        <div class="donut-text">
-          <h3>24 Weeks</h3>
-          <p>Pregnancy</p>
-        </div>
-      </div>
-
-      <div class="overview-card badge-card slide-up">
-        <div class="badge-circle">3</div>
-        <h3>Appointments</h3>
-        <p>Upcoming Visits Scheduled</p>
-      </div>
-
-      <div class="overview-card checklist-card slide-up">
-        <h3>Nutrition Tips</h3>
-        <ul class="mini-checklist">
-          <li><img src="images/greens.png" alt="Greens"> Eat more greens</li>
-          <li><img src="images/water.png" alt="Water"> Stay hydrated</li>
-          <li><img src="images/iron.png" alt="Iron"> Boost iron intake</li>
+  <!-- 🌐 Top Navigation -->
+  <header class="top-nav">
+    <div class="logo">TeenParent+</div>
+    <nav class="nav-links">
+      <a href="#">Features</a>
+      <a href="#">Why Us</a>
+      <a href="#">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="lang-toggle" id="langToggle">EN | SW</button>
+      <div class="notifications"><i class="fas fa-bell"></i></div>
+      <div class="profile-dropdown">
+        <img src="/public/images/avatar-default.png" id="userAvatar" alt="Avatar">
+        <ul class="dropdown-menu">
+          <li><a href="#">My Profile</a></li>
+          <li><a href="#">Settings</a></li>
+          <li><a href="/logout">Logout</a></li>
         </ul>
       </div>
     </div>
-  </section>
+  </header>
 
-  <!-- Pregnancy Progress Section -->
-  <section id="pregnancy-progress" class="pregnancy-progress fade-in">
-    <h2>Pregnancy Growth</h2>
-    <div class="progress-container">
-      <svg class="progress-ring" width="150" height="150">
-        <circle class="progress-ring__circle" stroke="#A68EF1" stroke-width="8" fill="transparent" r="68" cx="75" cy="75"/>
-      </svg>
-      <div class="progress-text">
-        <h3 id="weeks-text">24 Weeks</h3>
-        <p id="trimester-text">2nd Trimester</p>
+  <!-- 📂 Sidebar Navigation -->
+  <aside class="sidebar">
+    <ul>
+      <li class="active"><i class="fas fa-home"></i> Dashboard</li>
+      <li><i class="fas fa-baby"></i> My Pregnancy</li>
+      <li><i class="fas fa-calendar-alt"></i> Calendar</li>
+      <li><i class="fas fa-heart"></i> Mood Journal</li>
+      <li><i class="fas fa-book-open"></i> Articles</li>
+      <li><i class="fas fa-comments"></i> Chat Support</li>
+      <li><i class="fas fa-box-open"></i> Resources</li>
+      <li><i class="fas fa-calendar-check"></i> Due Date</li>
+      <li><i class="fas fa-cog"></i> Settings</li>
+    </ul>
+  </aside>
+
+  <!-- 🖥️ Main Dashboard Content -->
+  <main class="dashboard-main">
+
+    <!-- 🎉 Welcome Banner -->
+    <section class="welcome-banner">
+      <div class="banner-text">
+        <h1 id="welcomeMessage"></h1>
+        <p>Your pregnancy journey is important to us. Here's a quick look at your progress.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- Baby Size Tracker -->
-  <section class="baby-size fade-in">
-    <h2>Baby Growth Update</h2>
-    <div class="baby-size-card slide-up">
-      <img src="images/mango.png" alt="Baby Size - Mango">
-      <p>This week: your baby is the size of a <strong>Mango</strong> 🥭</p>
-    </div>
-  </section>
-
-  <!-- Daily Reminders -->
-  <section id="reminders" class="reminders fade-in">
-    <h2>Today's Tasks</h2>
-    <div class="stepper">
-      <div class="step active slide-up">Take Prenatal Vitamins</div>
-      <div class="step slide-up">Light Exercise</div>
-      <div class="step slide-up">Hydration Goal</div>
-    </div>
-  </section>
-
-  <!-- Upcoming Appointments -->
-  <section class="appointments fade-in">
-    <h2>Upcoming Visits</h2>
-    <div class="appointment-cards">
-      <div class="appointment-card slide-up">
-        <img src="images/clinic1.png" alt="ABC Clinic">
-        <div>
-          <h4>ABC Clinic</h4>
-          <p>May 20, 2025</p>
-        </div>
+      <div class="banner-image">
+        <img src="/public/images/illustration-dashboard-welcome.png" alt="Teen and baby illustration" />
       </div>
-      <div class="appointment-card slide-up">
-        <img src="images/clinic2.png" alt="Healthy Moms Center">
-        <div>
-          <h4>Healthy Moms Center</h4>
-          <p>June 10, 2025</p>
-        </div>
+    </section>
+
+    <!-- 📊 Stats Widgets -->
+    <section class="widgets">
+      <div class="widget"><h4>Weeks Pregnant</h4><p>22 Weeks</p></div>
+      <div class="widget"><h4>Next Appointment</h4><p>Tuesday, 3PM - Dr. Kamau</p></div>
+      <div class="widget"><h4>Mood Score</h4><p>😊 Happy</p></div>
+      <div class="widget"><h4>Unread Messages</h4><p>2 new</p></div>
+    </section>
+
+    <!-- 📅 Upcoming Appointments -->
+    <section class="appointments-card">
+      <h3>Upcoming Appointments</h3>
+      <ul>
+        <li>May 4th, 2PM – Clinic Visit</li>
+        <li>May 10th, 11AM – Nutrition Workshop</li>
+        <li>No more events this week</li>
+      </ul>
+      <button class="btn-add-appointment">+ Add Appointment</button>
+    </section>
+
+    <!-- ❤️ Mood Tracker -->
+    <section class="mood-tracker">
+      <h3>How are you feeling today?</h3>
+      <div class="emoji-select">
+        <button class="mood-option">😊</button>
+        <button class="mood-option">😐</button>
+        <button class="mood-option">😞</button>
+        <button class="mood-option">😭</button>
       </div>
-    </div>
-  </section>
+      <textarea placeholder="Write a note about your mood..."></textarea>
+      <button class="btn-save-mood">Save Mood</button>
+    </section>
 
-  <!-- Mood Tracker -->
-  <section class="mood-tracker fade-in">
-    <h2>Track Your Mood</h2>
-    <div class="mood-options">
-      <label class="mood-choice">
-        <input type="radio" name="mood" value="Happy">
-        <img src="images/happy.png" alt="Happy" class="mood-img">
-        <span>Happy</span>
-      </label>
-      <label class="mood-choice">
-        <input type="radio" name="mood" value="Neutral">
-        <img src="images/neutral.png" alt="Neutral" class="mood-img">
-        <span>Neutral</span>
-      </label>
-      <label class="mood-choice">
-        <input type="radio" name="mood" value="Sad">
-        <img src="images/sad.png" alt="Sad" class="mood-img">
-        <span>Sad</span>
-      </label>
-    </div>
-    <textarea placeholder="Write about your day..."></textarea>
-    <button>Save Mood</button>
-  </section>
-
-  <!-- Daily Affirmation -->
-  <section class="daily-affirmation fade-in">
-    <h2>Today's Affirmation 💛</h2>
-    <blockquote>
-      "Every heartbeat, every movement, every breath — is a miracle growing inside me."
-    </blockquote>
-  </section>
-
-  <!-- Health Tips Carousel -->
-  <section class="health-tips fade-in">
-    <h2>Health Tips</h2>
-    <div class="tips-carousel">
-      <div class="tip active slide-up">Drink at least 8 glasses of water today 💧</div>
-      <div class="tip slide-up">Prioritize sleep for both you and your baby 💤</div>
-      <div class="tip slide-up">Daily light stretching can ease body aches 🤸‍♀️</div>
-    </div>
-  </section>
-
-  <!-- Quick Actions -->
-  <section class="quick-actions fade-in">
-    <h2>Quick Actions</h2>
-    <div class="action-buttons">
-      <button class="quick-btn slide-up"><i class="fas fa-plus-circle"></i> Log New Visit</button>
-      <button class="quick-btn slide-up"><i class="fas fa-heartbeat"></i> Add Symptom</button>
-      <button class="quick-btn slide-up"><i class="fas fa-user-nurse"></i> Ask a Nurse</button>
-    </div>
-  </section>
-
-  <!-- Journal Highlights -->
-  <section class="journal-highlights fade-in">
-    <h2>Recent Journal Entries</h2>
-    <div class="journal-grid">
-      <div class="journal-entry slide-up">
-        <p>"Feeling energized after my checkup!"</p>
+    <!-- 📚 Learning Carousel -->
+    <section class="learning-section">
+      <h3>Learn Something New</h3>
+      <div class="carousel">
+        <div class="card">💡 Trimester Nutrition Guide</div>
+        <div class="card">🛌 Better Sleep Tips</div>
+        <div class="card">🤱 Building Confidence</div>
       </div>
-      <div class="journal-entry slide-up">
-        <p>"A little tired today, but grateful."</p>
-      </div>
-      <div class="journal-entry slide-up">
-        <p>"Excited about baby's kicks this week!"</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Learning Center -->
-  <section id="learning-center" class="learning-center fade-in">
-    <h2>Learning Center</h2>
-    <div class="feature-grid">
-      <div class="feature-card gradient-1 slide-up"><i class="fas fa-book-reader"></i><p>Articles</p></div>
-      <div class="feature-card gradient-2 slide-up"><i class="fas fa-video"></i><p>Video Lessons</p></div>
-      <div class="feature-card gradient-3 slide-up"><i class="fas fa-leaf"></i><p>Nutrition Guides</p></div>
-      <div class="feature-card gradient-4 slide-up"><i class="fas fa-heartbeat"></i><p>Mental Wellness</p></div>
-    </div>
-  </section>
+    <!-- 📦 Resources -->
+    <section class="resources-section">
+      <h3>Helpful Resources</h3>
+      <ul>
+        <li><a href="#">Access to Free Clinics</a></li>
+        <li><a href="#">Support Groups Near You</a></li>
+        <li><a href="#">Pregnancy Rights Guide</a></li>
+      </ul>
+    </section>
 
-  <!-- Notifications -->
-  <section id="notifications" class="notifications fade-in">
-    <h2>Notifications</h2>
-    <div class="toast slide-up">
-      <i class="fas fa-bell"></i> Appointment reminder for tomorrow!
-    </div>
-    <div class="toast slide-up">
-      <i class="fas fa-bell"></i> New nutrition article posted!
-    </div>
-  </section>
+  </main>
 
-</main>
-
-
-<!-- Footer -->
-<footer class="footer">
-  <p>© 2025 TeenParent+ — Building bright futures, together 💛</p>
-</footer>
-
-<!-- Back to Top Button -->
-<button id="backToTopBtn" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
-
-<script src="js/teen_dashboard.js"></script>
-
+  <!-- Scripts -->
+  <script src="/public/js/dashboard.js"></script>
 </body>
 </html>
