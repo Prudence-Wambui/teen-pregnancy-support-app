@@ -1,142 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Learning Content | TeenParent+</title>
-  <link rel="stylesheet" href="../../../public/css/content_details.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pregnancy Nutrition Tips – TeenParent+</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../../public/css/content-details.css" />
 </head>
-
 <body>
 
-<!-- Header -->
-<header class="navbar">
-  <div class="container navbar-container">
-    <div class="logo">
-      <a href="../../../index.php">
-        <i class="fas fa-baby-carriage"></i> TeenParent+
-      </a>
+  <!-- Header -->
+   <header class="top-nav">
+    <div class="container nav-container">
+      <div class="nav-logo">TeenParent+</div>
+      <nav class="nav-links">
+        <a href="/articles.html">Articles</a>
+        <a href="/dashboard.html">Dashboard</a>
+        <a href="/login.html" class="btn-login">Login</a>
+      </nav>
     </div>
+  </header>
+  
 
-    <input type="checkbox" id="menu-toggle" />
-    <label for="menu-toggle" class="menu-icon">
-      <i class="fas fa-bars"></i>
-    </label>
+  <!-- Hero Banner -->
+  <section class="article-hero">
+    <div class="container hero-container">
+      <div class="hero-text">
+        <h1>Pregnancy Nutrition Tips for Teen Mothers</h1>
+        <p class="author-meta">By <strong>TeenParent+ Health Team</strong> • Updated: May 5, 2025</p>
+      </div>
+      <div class="hero-image">
+        <img src="/public/images/article-nutrition.jpg" alt="Healthy pregnancy foods">
+      </div>
+    </div>
+  </section>
 
-    <nav class="nav-links">
-      <a href="../../../modules/content/pages/content_library.html"><i class="fas fa-book-open"></i> Library</a>
-      <a href="../../../modules/support/pages/help_center.html"><i class="fas fa-hands-helping"></i> Support</a>
-      <a href="../../../modules/auth/logout.php" class="btn-primary"><i class="fas fa-sign-out-alt"></i> Logout</a>
-    </nav>
-  </div>
-</header>
+  <!-- Article Content -->
+  <main class="article-body container">
+    <article>
+      <p>Nutrition plays a crucial role during pregnancy, especially for teen mothers. Your body is supporting both you and your baby’s growth, so choosing the right foods is essential.</p>
 
-<!-- Main Content -->
-<main class="auth-container fade-slide">
-  <div class="illustration">
-    <img src="https://undraw.co/api/illustrations/online-learning.svg" alt="Learning Illustration" loading="lazy">
-  </div>
+      <h2>Why Nutrition Matters</h2>
+      <p>Teens are still growing themselves, which means your body needs even more nutrients like iron, calcium, folic acid, and protein to ensure healthy development for both you and the baby.</p>
 
-  <h1 id="contentTitle">Loading Content...</h1>
+      <h2>What to Eat</h2>
+      <ul>
+        <li><strong>Fruits and Vegetables:</strong> Packed with vitamins, fiber, and minerals.</li>
+        <li><strong>Whole Grains:</strong> Provide long-lasting energy and key nutrients.</li>
+        <li><strong>Lean Proteins:</strong> Such as beans, eggs, chicken, and fish.</li>
+        <li><strong>Dairy:</strong> For calcium, try yogurt, cheese, or milk.</li>
+      </ul>
 
-  <div id="contentBody" class="content-body">
-    <p>Loading, please wait...</p>
-  </div>
+      <h2>What to Avoid</h2>
+      <p>Limit caffeine, sugary snacks, and processed foods. Avoid alcohol and smoking completely.</p>
 
-  <p class="auth-link">
-    <a href="content_library.html">← Back to Content Library</a>
-  </p>
-</main>
+      <blockquote>
+        “Eating well helps both you and your baby grow strong. Small changes make a big difference!”
+      </blockquote>
 
-<!-- Footer -->
-<footer class="footer">
-  <div class="container">
-    <p>© <span id="year"></span> TeenParent+ — Empowering Your Journey 💛</p>
-  </div>
-</footer>
+      <h2>Need Help Planning Meals?</h2>
+      <p>Check out our <a href="/resources/nutrition-guide.html">Teen Nutrition Guide</a> for weekly meal ideas and free downloads.</p>
+    </article>
+  </main>
 
-<script>document.addEventListener('DOMContentLoaded', function() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const contentId = urlParams.get('id');
+  <!-- Sidebar (optional for wider screens) -->
+  <aside class="sidebar container">
+    <div class="related-content">
+      <h3>More on Nutrition</h3>
+      <ul>
+        <li><a href="#">5 Easy Meals for Pregnant Teens</a></li>
+        <li><a href="#">Hydration Tips During Pregnancy</a></li>
+        <li><a href="#">Understanding Prenatal Vitamins</a></li>
+      </ul>
+    </div>
+    <div class="cta-box">
+      <h4>Want Personalized Advice?</h4>
+      <a href="/chat.html" class="btn-primary">Chat with a Nurse</a>
+    </div>
+  </aside>
 
-  const contents = {
-    1: {
-      title: '🥗 Nutrition During Pregnancy',
-      body: '<p>Eating well during pregnancy is essential for both you and your growing baby. Focus on colorful fruits, veggies, proteins, and grains for full nourishment.</p>'
-    },
-    2: {
-      title: '🏃‍♀️ Safe Exercises for Expectant Teens',
-      body: '<iframe width="100%" height="315" src="https://www.youtube.com/embed/vH2P0qU4E90" frameborder="0" allowfullscreen></iframe>'
-    },
-    3: {
-      title: '🤱 Understanding Labor and Delivery',
-      body: '<p>Labor and delivery are natural and powerful. Learn how each stage unfolds, and how you can feel more prepared and confident welcoming your little one.</p>'
-    },
-    4: {
-      title: '🍼 Caring for Your Newborn',
-      body: '<p>Newborns thrive on love, patience, and gentle care. Master the basics of feeding, sleeping, and diapering your beautiful baby!</p>'
-    },
-    5: {
-      title: '📝 Quiz: How Much Have You Learned?',
-      body: '<p><strong>Quiz Time!</strong> Test yourself on all you\'ve learned about healthy pregnancy and baby care. You\'re doing amazing! 💛</p>'
-    }
-  };
-
-  if (contents[contentId]) {
-    document.getElementById('contentTitle').innerHTML = contents[contentId].title;
-    document.getElementById('contentBody').innerHTML = contents[contentId].body;
-  } else {
-    document.getElementById('contentTitle').innerHTML = 'Content Not Found';
-    document.getElementById('contentBody').innerHTML = '<p>Sorry, we couldn’t find what you were looking for. 💬</p>';
-  }
-});
-</script>
-
-<!-- JavaScript to Dynamically Load Content and Animate -->
-<script>
-  // Update footer year
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  // Fade-slide animation when page loads
-  document.addEventListener('DOMContentLoaded', function () {
-    document.querySelector('.fade-slide').classList.add('visible');
-
-    const urlParams = new URLSearchParams(window.location.search);
-    const contentId = urlParams.get('id');
-
-    const contents = {
-      1: {
-        title: '🥗 Nutrition During Pregnancy',
-        body: '<p>Eating well during pregnancy is essential for both you and your growing baby. Focus on colorful fruits, veggies, proteins, and grains for full nourishment.</p>'
-      },
-      2: {
-        title: '🏃‍♀️ Safe Exercises for Expectant Teens',
-        body: '<iframe width="100%" height="315" src="https://www.youtube.com/embed/vH2P0qU4E90" frameborder="0" allowfullscreen></iframe>'
-      },
-      3: {
-        title: '🤱 Understanding Labor and Delivery',
-        body: '<p>Labor and delivery are natural and powerful. Learn how each stage unfolds, and how you can feel more prepared and confident welcoming your little one.</p>'
-      },
-      4: {
-        title: '🍼 Caring for Your Newborn',
-        body: '<p>Newborns thrive on love, patience, and gentle care. Master the basics of feeding, sleeping, and diapering your beautiful baby!</p>'
-      },
-      5: {
-        title: '📝 Quiz: How Much Have You Learned?',
-        body: '<p><strong>Quiz Time!</strong> Test yourself on all you\'ve learned about healthy pregnancy and baby care. You\'re doing amazing! 💛</p>'
-      }
-    };
-
-    if (contents[contentId]) {
-      document.getElementById('contentTitle').innerHTML = contents[contentId].title;
-      document.getElementById('contentBody').innerHTML = contents[contentId].body;
-    } else {
-      document.getElementById('contentTitle').innerHTML = 'Content Not Found';
-      document.getElementById('contentBody').innerHTML = '<p>Sorry, we couldn’t find what you were looking for. 💬</p>';
-    }
-  });
-</script>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-logo">TeenParent+</div>
+      <div class="footer-links">
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+      <p>&copy; 2025 TeenParent+. All rights reserved.</p>
+    </div>
+  </footer>
 
 </body>
 </html>

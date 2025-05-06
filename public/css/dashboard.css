@@ -1,0 +1,324 @@
+/* === Base === */
+body {
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    background-color: #fdf7f3;
+    color: #5C4A3D;
+  }
+  
+  .dashboard-wrapper {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  /* === Sidebar === */
+  .sidebar {
+    width: 240px;
+    background: #fff;
+    box-shadow: 2px 0 6px rgba(0,0,0,0.05);
+    padding: 2rem 1rem;
+  }
+  
+  .profile-section {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+  }
+  
+  .user-name {
+    margin: 0.5rem 0 0;
+    font-size: 1.1rem;
+    color: #D07960;
+  }
+  
+  .user-email {
+    font-size: 0.85rem;
+    color: #9B867B;
+  }
+  
+  .sidebar-menu ul {
+    padding: 0;
+    margin-top: 1rem;
+  }
+  
+  .sidebar-menu li {
+    list-style: none;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #5C4A3D;
+    transition: background 0.2s ease;
+  }
+  
+  .sidebar-menu li:hover,
+  .sidebar-menu li.active {
+    background-color: #FFF0E9;
+    font-weight: bold;
+  }
+  
+  /* === Main Content === */
+  .main-content {
+    flex: 1;
+    padding: 2rem;
+    background: #fdf7f3;
+  }
+  
+  /* Header */
+  .main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .main-header h1 {
+    font-size: 1.6rem;
+    color: #5C3A29;
+    margin: 0;
+  }
+  
+  .main-header p {
+    font-size: 0.9rem;
+    color: #8C6B58;
+  }
+  
+  .btn-primary {
+    background-color: #D07960;
+    color: #fff;
+    padding: 0.7rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .btn-primary:hover {
+    background-color: #B96148;
+  }
+  
+
+  /* === Weekly Tips === */
+.weekly-tips {
+    background-color: #FFF4EF;
+    border-left: 4px solid #F08D5D;
+    padding: 1.2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    color: #5C4A3D;
+  }
+  
+  /* === Mood Summary Chart === */
+  .mood-summary {
+    background-color: #FFF9F6;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    border: 1px solid #F1DAD3;
+  }
+  
+  /* === Milestones === */
+  .milestones {
+    background-color: #FFF3ED;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+  }
+  .milestone-list li {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #6A4E3C;
+  }
+  
+  /* === Hydration Tracker === */
+  .hydration-tracker {
+    background-color: #FFF9F6;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    border: 1px solid #F1DAD3;
+  }
+  .hydration-tracker progress {
+    width: 100%;
+    height: 18px;
+    appearance: none;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .hydration-tracker progress::-webkit-progress-bar {
+    background-color: #FFEFE7;
+  }
+  .hydration-tracker progress::-webkit-progress-value {
+    background-color: #F08D5D;
+  }
+  
+  /* === Journal Section === */
+  .journal-section {
+    background-color: #FFF7F4;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+  }
+  .journal-section textarea {
+    width: 100%;
+    height: 120px;
+    border: 1px solid #E6D5CE;
+    border-radius: 8px;
+    padding: 1rem;
+    font-family: 'Quicksand', sans-serif;
+    background-color: #FFFFFF;
+    margin-bottom: 1rem;
+    resize: vertical;
+  }
+  
+  /* === Resource Spotlight === */
+  .resource-spotlight {
+    background-color: #FFF4EC;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    border-left: 4px solid #E07A5F;
+  }
+  .resource-spotlight a {
+    color: #CE6D56;
+    font-weight: bold;
+  }
+  
+  /* === Notifications Feed === */
+  .notifications-feed {
+    background-color: #FFF5F1;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+  }
+  .notifications-feed ul li {
+    margin-bottom: 0.5rem;
+    color: #5C4A3D;
+    padding-left: 1.2rem;
+    position: relative;
+  }
+  .notifications-feed ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #F08D5D;
+    font-size: 1.2rem;
+  }  
+
+  /* Status Cards */
+  .status-cards {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .project-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1rem;
+    flex: 1;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  }
+  
+  .project-card h3 {
+    margin-top: 0;
+    font-size: 1rem;
+    color: #5C4A3D;
+  }
+  
+  .progress-bar {
+    height: 8px;
+    background: #F5E1DA;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+  }
+  
+  .progress {
+    height: 100%;
+    background: #F08D5D;
+  }
+  
+  /* Middle Panel */
+  .middle-section {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .tasks-card,
+  .stats-card,
+  .donut-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1rem;
+    flex: 1;
+    min-width: 250px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  }
+  
+  .tasks-card ul,
+  .stats-card ul {
+    margin: 0;
+    padding-left: 1.2rem;
+  }
+  
+  .tasks-card li,
+  .stats-card li {
+    margin-bottom: 0.6rem;
+    font-size: 0.95rem;
+  }
+  
+  .donut-card {
+    text-align: center;
+  }
+  
+  /* Right Panel - Calendar */
+  .calendar-panel {
+    width: 260px;
+    background: #fff;
+    padding: 2rem 1rem;
+    box-shadow: -2px 0 6px rgba(0,0,0,0.05);
+  }
+  
+  .calendar-panel h2 {
+    font-size: 1.2rem;
+    color: #5C4A3D;
+    margin-bottom: 1rem;
+  }
+  
+  .calendar-events li {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid #F08D5D;
+    padding-left: 0.8rem;
+    line-height: 1.4;
+  }
+  
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .dashboard-wrapper {
+      flex-direction: column;
+    }
+    .sidebar,
+    .calendar-panel {
+      width: 100%;
+      position: relative;
+      box-shadow: none;
+    }
+    .middle-section {
+      flex-direction: column;
+    }
+  }
+  

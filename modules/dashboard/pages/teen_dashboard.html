@@ -1,124 +1,178 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Teen Dashboard - TeenParent+</title>
-
-  <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="../../../public/css/dashboard.css" />
-</head>
-<body>
-  <!-- 🌐 Top Navigation -->
-  <header class="top-nav">
-    <div class="logo">TeenParent+</div>
-    <nav class="nav-links">
-      <a href="#">Features</a>
-      <a href="#">Why Us</a>
-      <a href="#">Contact</a>
-    </nav>
-    <div class="nav-actions">
-      <button class="lang-toggle" id="langToggle">EN | SW</button>
-      <div class="notifications"><i class="fas fa-bell"></i></div>
-      <div class="profile-dropdown">
-        <img src="/public/images/avatar-default.png" id="userAvatar" alt="Avatar">
-        <ul class="dropdown-menu">
-          <li><a href="#">My Profile</a></li>
-          <li><a href="#">Settings</a></li>
-          <li><a href="/logout">Logout</a></li>
+ <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>TeenParent+ Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="../../../public/css/dashboard.css" />
+  </head>
+  <body>
+  
+  <div class="dashboard-layout">
+  
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="avatar-wrapper">
+        <img src="/public/images/avatar-default.png" alt="User Avatar" class="avatar">
+      </div>
+      <nav class="nav-icons">
+        <i class="fas fa-home"></i>
+        <i class="fas fa-baby"></i>
+        <i class="fas fa-heart"></i>
+        <i class="fas fa-calendar-alt"></i>
+        <i class="fas fa-comments"></i>
+        <i class="fas fa-cog"></i>
+      </nav>
+    </aside>
+  
+    <!-- Grid Main Content -->
+    <main class="dashboard-grid">
+  
+      <!-- Top Stats Cards -->
+      <section class="grid-card span-2">
+        <h4>Weekly Growth</h4>
+        <p>Height: 28 cm | Weight: 430g</p>
+        <p class="stat-up">↑ 2.4 cm since last week</p>
+      </section>
+  
+      <section class="grid-card span-2">
+        <h4>Missed Tasks</h4>
+        <p>2 tasks skipped this week</p>
+        <p class="stat-down">↓ Hydration & Walk</p>
+      </section>
+  
+      <!-- Calendar -->
+      <section class="grid-card calendar-card span-2">
+        <h4>Upcoming</h4>
+        <p><strong>May 10:</strong> Midwife at 3PM</p>
+        <p><strong>May 12:</strong> Nutrition Workshop</p>
+        <div class="calendar-embed">[Embed mini calendar]</div>
+      </section>
+  
+      <!-- Donut Progress -->
+      <section class="grid-card span-2">
+        <h4>Pregnancy Progress</h4>
+        <canvas id="progressDonut" width="100" height="100"></canvas>
+      </section>
+  
+      <!-- Mood Trend -->
+      <section class="grid-card span-3">
+        <h4>Mood Trends</h4>
+        <canvas id="moodLineChart" height="80"></canvas>
+      </section>
+  
+      <!-- Trimester Bar -->
+      <section class="grid-card span-3">
+        <h4>Trimester Journey</h4>
+        <canvas id="trimesterBarChart" height="80"></canvas>
+      </section>
+  
+      <!-- Mood Summary -->
+      <section class="grid-card span-2">
+        <h4>This Week’s Mood</h4>
+        <ul>
+          <li>Happy: 3 days</li>
+          <li>Neutral: 2 days</li>
+          <li>Tired: 2 days</li>
         </ul>
-      </div>
-    </div>
-  </header>
-
-  <!-- 📂 Sidebar Navigation -->
-  <aside class="sidebar">
-    <ul>
-      <li class="active"><i class="fas fa-home"></i> Dashboard</li>
-      <li><i class="fas fa-baby"></i> My Pregnancy</li>
-      <li><i class="fas fa-calendar-alt"></i> Calendar</li>
-      <li><i class="fas fa-heart"></i> Mood Journal</li>
-      <li><i class="fas fa-book-open"></i> Articles</li>
-      <li><i class="fas fa-comments"></i> Chat Support</li>
-      <li><i class="fas fa-box-open"></i> Resources</li>
-      <li><i class="fas fa-calendar-check"></i> Due Date</li>
-      <li><i class="fas fa-cog"></i> Settings</li>
-    </ul>
-  </aside>
-
-  <!-- 🖥️ Main Dashboard Content -->
-  <main class="dashboard-main">
-
-    <!-- 🎉 Welcome Banner -->
-    <section class="welcome-banner">
-      <div class="banner-text">
-        <h1 id="welcomeMessage"></h1>
-        <p>Your pregnancy journey is important to us. Here's a quick look at your progress.</p>
-      </div>
-      <div class="banner-image">
-        <img src="/public/images/illustration-dashboard-welcome.png" alt="Teen and baby illustration" />
-      </div>
-    </section>
-
-    <!-- 📊 Stats Widgets -->
-    <section class="widgets">
-      <div class="widget"><h4>Weeks Pregnant</h4><p>22 Weeks</p></div>
-      <div class="widget"><h4>Next Appointment</h4><p>Tuesday, 3PM - Dr. Kamau</p></div>
-      <div class="widget"><h4>Mood Score</h4><p>😊 Happy</p></div>
-      <div class="widget"><h4>Unread Messages</h4><p>2 new</p></div>
-    </section>
-
-    <!-- 📅 Upcoming Appointments -->
-    <section class="appointments-card">
-      <h3>Upcoming Appointments</h3>
-      <ul>
-        <li>May 4th, 2PM – Clinic Visit</li>
-        <li>May 10th, 11AM – Nutrition Workshop</li>
-        <li>No more events this week</li>
-      </ul>
-      <button class="btn-add-appointment">+ Add Appointment</button>
-    </section>
-
-    <!-- ❤️ Mood Tracker -->
-    <section class="mood-tracker">
-      <h3>How are you feeling today?</h3>
-      <div class="emoji-select">
-        <button class="mood-option">😊</button>
-        <button class="mood-option">😐</button>
-        <button class="mood-option">😞</button>
-        <button class="mood-option">😭</button>
-      </div>
-      <textarea placeholder="Write a note about your mood..."></textarea>
-      <button class="btn-save-mood">Save Mood</button>
-    </section>
-
-    <!-- 📚 Learning Carousel -->
-    <section class="learning-section">
-      <h3>Learn Something New</h3>
-      <div class="carousel">
-        <div class="card">💡 Trimester Nutrition Guide</div>
-        <div class="card">🛌 Better Sleep Tips</div>
-        <div class="card">🤱 Building Confidence</div>
-      </div>
-    </section>
-
-    <!-- 📦 Resources -->
-    <section class="resources-section">
-      <h3>Helpful Resources</h3>
-      <ul>
-        <li><a href="#">Access to Free Clinics</a></li>
-        <li><a href="#">Support Groups Near You</a></li>
-        <li><a href="#">Pregnancy Rights Guide</a></li>
-      </ul>
-    </section>
-
-  </main>
-
+      </section>
+  
+      <!-- Learning Insights -->
+      <section class="grid-card span-2">
+        <h4>Learning Activity</h4>
+        <canvas id="articleChart" height="80"></canvas>
+      </section>
+  
+      <!-- Baby Size Visual -->
+      <section class="grid-card span-2">
+        <h4>Baby Size - Week 22</h4>
+        <img src="/public/images/baby-size-week22.png" alt="Baby Size" class="baby-visual">
+        <p>Roughly the size of a papaya</p>
+      </section>
+  
+      <!-- Weekly Tip -->
+      <section class="grid-card span-3">
+        <h4>Weekly Tip</h4>
+        <p>Eating fiber-rich foods can ease constipation during pregnancy. Include bananas, oats, and lentils in your diet.</p>
+      </section>
+  
+    </main>
+  </div>
+  
   <!-- Scripts -->
-  <script src="/public/js/dashboard.js"></script>
-</body>
-</html>
+  <script>
+    // Pregnancy Donut Chart
+    new Chart(document.getElementById('progressDonut'), {
+      type: 'doughnut',
+      data: {
+        labels: ['Completed', 'Remaining'],
+        datasets: [{
+          data: [22, 18],
+          backgroundColor: ['#F08D5D', '#F3E9E5']
+        }]
+      },
+      options: {
+        cutout: '70%',
+        plugins: { legend: { display: false } }
+      }
+    });
+  
+    // Mood Line Chart
+    new Chart(document.getElementById('moodLineChart'), {
+      type: 'line',
+      data: {
+        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        datasets: [{
+          label: 'Mood Score',
+          data: [4, 3, 5, 2, 3, 4, 3],
+          borderColor: '#8E6E63',
+          fill: false,
+          tension: 0.4
+        }]
+      },
+      options: {
+        scales: { y: { beginAtZero: true, max: 5 } },
+        plugins: { legend: { display: false } }
+      }
+    });
+  
+    // Trimester Progress Bar Chart
+    new Chart(document.getElementById('trimesterBarChart'), {
+      type: 'bar',
+      data: {
+        labels: ['Trimester 1', 'Trimester 2', 'Trimester 3'],
+        datasets: [{
+          label: 'Weeks Complete',
+          data: [13, 9, 0],
+          backgroundColor: ['#D0A293', '#F08D5D', '#E8D5CE']
+        }]
+      },
+      options: {
+        scales: { y: { beginAtZero: true, max: 13 } },
+        plugins: { legend: { display: false } }
+      }
+    });
+  
+    // Article Read Activity
+    new Chart(document.getElementById('articleChart'), {
+      type: 'bar',
+      data: {
+        labels: ['Nutrition', 'Mental Health', 'Self-care'],
+        datasets: [{
+          label: 'Articles Read',
+          data: [2, 1, 3],
+          backgroundColor: '#F08D5D'
+        }]
+      },
+      options: {
+        scales: { y: { beginAtZero: true } },
+        plugins: { legend: { display: false } }
+      }
+    });
+  </script>
+  </body>
+  </html>
+  
