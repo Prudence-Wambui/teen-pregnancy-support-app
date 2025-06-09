@@ -6,8 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   filterButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-      document.querySelector('.filter-btn.active').classList.remove('active');
+      const current = document.querySelector('.filter-btn.active');
+      if (current) {
+        current.classList.remove('active');
+        current.setAttribute('aria-pressed', 'false');
+      }
       btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
       const filter = btn.dataset.filter;
       notifications.forEach(item => {
         if (filter === 'all' || item.dataset.category === filter) {
