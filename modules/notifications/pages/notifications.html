@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Notifications | TeenParent+</title>
+  <link rel="stylesheet" href="../../../public/css/notification.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <script defer src="../../../public/js/notifications.js"></script>
+</head>
+
+<body>
+  <header class="top-nav">
+    <div class="logo">TeenParent+</div>
+    <nav>
+      <a href="/dashboard.html">Home</a>
+      <a href="/modules/pregnancy/pages/due_date_entry.html">Pregnancy</a>
+      <a href="/modules/visits/pages/visit_calendar.html">Reminders</a>
+      <a href="/modules/content/pages/content_library.html">Learning</a>
+      <a href="#" class="active">Notifications</a>
+    </nav>
+    <a href="/modules/auth/logout.php" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    <a href="/modules/auth/logout.php" class="logout-btn"><i class="fas fa-sign-out-alt" aria-hidden="true"></i> Logout</a>
+  </header>
+
+  <main class="notifications-container">
+    <h1><i class="fas fa-bell"></i> Your Notifications</h1>
+  <main class="notifications-container" aria-live="polite">
+      <h1><i class="fas fa-bell" aria-hidden="true"></i> Your Notifications</h1>
+
+    <section class="notification-list">
+      <div class="notification-item">
+        <i class="fas fa-calendar-check icon purple"></i>
+        <div class="text">
+          <h3>Upcoming Visit Reminder</h3>
+          <p>Your appointment at ABC Clinic is tomorrow at 9:00 AM. Don’t forget your prenatal vitamins 💊</p>
+          <span class="time">1 hour ago</span>
+        </div>
+      <div class="filter-bar" role="toolbar" aria-label="Filter notifications">
+        <button class="filter-btn active" data-filter="all" aria-label="Show all notifications" aria-pressed="true">All</button>
+        <button class="filter-btn" data-filter="health" aria-label="Show health notifications" aria-pressed="false">Health</button>
+        <button class="filter-btn" data-filter="support" aria-label="Show support notifications" aria-pressed="false">Support</button>
+        <button class="filter-btn" data-filter="system" aria-label="Show system notifications" aria-pressed="false">System</button>
+      </div>
+
+      <div class="notification-item">
+        <i class="fas fa-carrot icon green"></i>
+        <div class="text">
+          <h3>New Nutrition Tip</h3>
+          <p>Today's tip: Add more leafy greens to your lunch for iron and folate 🌿</p>
+          <span class="time">2 hours ago</span>
+      <section class="notification-list" role="list">
+        <div class="notification-item unread" data-category="health" role="listitem">
+          <i class="fas fa-calendar-check icon purple" aria-hidden="true"></i>
+          <div class="text">
+            <h3>Upcoming Visit Reminder</h3>
+            <p>Your appointment at ABC Clinic is tomorrow at 9:00 AM. Don’t forget your prenatal vitamins 💊</p>
+            <span class="time">1 hour ago</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="notification-item">
+        <i class="fas fa-heart icon pink"></i>
+        <div class="text">
+          <h3>Daily Affirmation</h3>
+          <p>"You are doing an amazing job. Each day you grow stronger with your baby." 💛</p>
+          <span class="time">Today</span>
+        <div class="notification-item unread" data-category="health" role="listitem">
+          <i class="fas fa-pills icon green" aria-hidden="true"></i>
+          <div class="text">
+            <h3>Vitamin Time</h3>
+            <p>Take your daily prenatal vitamin to keep you and baby healthy.</p>
+            <span class="time">Today</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="notification-item">
+        <i class="fas fa-video icon blue"></i>
+        <div class="text">
+          <h3>New Learning Video Available</h3>
+          <p>Watch: “Understanding the Third Trimester” is now live 🎥</p>
+          <span class="time">Yesterday</span>
+        <div class="notification-item unread" data-category="health" role="listitem">
+          <i class="fas fa-baby icon pink" aria-hidden="true"></i>
+          <div class="text">
+            <h3>Pregnancy Milestone</h3>
+            <p>You're 20 weeks today! Baby is the size of a banana.</p>
+            <span class="time">Today</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+        <div class="notification-item unread" data-category="support" role="listitem">
+          <i class="fas fa-heart icon pink" aria-hidden="true"></i>
+          <div class="text">
+            <h3>Daily Affirmation</h3>
+            <p>"You are doing an amazing job. Each day you grow stronger with your baby." 💛</p>
+            <span class="time">Today</span>
+          </div>
+        </div>
+
+        <div class="notification-item unread" data-category="support" role="listitem">
+          <i class="fas fa-video icon blue" aria-hidden="true"></i>
+          <div class="text">
+            <h3>New Learning Video</h3>
+            <p>Watch: “Understanding the Third Trimester” is now live 🎥</p>
+            <span class="time">Yesterday</span>
+          </div>
+        </div>
+
+        <div class="notification-item unread" data-category="system" role="listitem">
+          <i class="fas fa-user-cog icon purple" aria-hidden="true"></i>
+          <div class="text">
+            <h3>Profile Updated</h3>
+            <p>Your account details were successfully updated.</p>
+            <span class="time">2 days ago</span>
+          </div>
+        </div>
+
+        <div class="notification-item unread" data-category="system" role="listitem">
+          <i class="fas fa-exclamation-triangle icon blue" aria-hidden="true"></i>
+          <div class="text">
+            <h3>Clinic Closed</h3>
+            <p>The community clinic will be closed this Friday.</p>
+            <span class="time">3 days ago</span>
+          </div>
+        </div>
+      </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 TeenParent+ — Building bright futures, together 💛</p>
+  </footer>
+</body>
+</html>
