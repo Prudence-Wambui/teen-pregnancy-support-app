@@ -19,22 +19,22 @@
       <a href="/modules/content/pages/content_library.html">Learning</a>
       <a href="#" class="active">Notifications</a>
     </nav>
-    <a href="/modules/auth/logout.php" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    <a href="/modules/auth/logout.php" class="logout-btn"><i class="fas fa-sign-out-alt" aria-hidden="true"></i> Logout</a>
   </header>
 
     <main class="notifications-container">
-      <h1><i class="fas fa-bell"></i> Your Notifications</h1>
+      <h1><i class="fas fa-bell" aria-hidden="true"></i> Your Notifications</h1>
 
       <div class="filter-bar">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="health">Health</button>
-        <button class="filter-btn" data-filter="support">Support</button>
-        <button class="filter-btn" data-filter="system">System</button>
+        <button class="filter-btn active" data-filter="all" aria-label="Show all notifications">All</button>
+        <button class="filter-btn" data-filter="health" aria-label="Show health notifications">Health</button>
+        <button class="filter-btn" data-filter="support" aria-label="Show support notifications">Support</button>
+        <button class="filter-btn" data-filter="system" aria-label="Show system notifications">System</button>
       </div>
 
       <section class="notification-list">
         <div class="notification-item unread" data-category="health">
-          <i class="fas fa-calendar-check icon purple"></i>
+          <i class="fas fa-calendar-check icon purple" aria-hidden="true"></i>
           <div class="text">
             <h3>Upcoming Visit Reminder</h3>
             <p>Your appointment at ABC Clinic is tomorrow at 9:00 AM. Don’t forget your prenatal vitamins 💊</p>
@@ -43,7 +43,7 @@
         </div>
 
         <div class="notification-item unread" data-category="health">
-          <i class="fas fa-pills icon green"></i>
+          <i class="fas fa-pills icon green" aria-hidden="true"></i>
           <div class="text">
             <h3>Vitamin Time</h3>
             <p>Take your daily prenatal vitamin to keep you and baby healthy.</p>
@@ -52,7 +52,7 @@
         </div>
 
         <div class="notification-item unread" data-category="health">
-          <i class="fas fa-baby icon pink"></i>
+          <i class="fas fa-baby icon pink" aria-hidden="true"></i>
           <div class="text">
             <h3>Pregnancy Milestone</h3>
             <p>You're 20 weeks today! Baby is the size of a banana.</p>
@@ -61,7 +61,7 @@
         </div>
 
         <div class="notification-item unread" data-category="support">
-          <i class="fas fa-heart icon pink"></i>
+          <i class="fas fa-heart icon pink" aria-hidden="true"></i>
           <div class="text">
             <h3>Daily Affirmation</h3>
             <p>"You are doing an amazing job. Each day you grow stronger with your baby." 💛</p>
@@ -70,7 +70,7 @@
         </div>
 
         <div class="notification-item unread" data-category="support">
-          <i class="fas fa-video icon blue"></i>
+          <i class="fas fa-video icon blue" aria-hidden="true"></i>
           <div class="text">
             <h3>New Learning Video</h3>
             <p>Watch: “Understanding the Third Trimester” is now live 🎥</p>
@@ -79,7 +79,7 @@
         </div>
 
         <div class="notification-item unread" data-category="system">
-          <i class="fas fa-user-cog icon purple"></i>
+          <i class="fas fa-user-cog icon purple" aria-hidden="true"></i>
           <div class="text">
             <h3>Profile Updated</h3>
             <p>Your account details were successfully updated.</p>
@@ -88,7 +88,7 @@
         </div>
 
         <div class="notification-item unread" data-category="system">
-          <i class="fas fa-exclamation-triangle icon blue"></i>
+          <i class="fas fa-exclamation-triangle icon blue" aria-hidden="true"></i>
           <div class="text">
             <h3>Clinic Closed</h3>
             <p>The community clinic will be closed this Friday.</p>
