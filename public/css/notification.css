@@ -82,6 +82,29 @@ body {
     flex-direction: column;
     gap: 25px;
   }
+
+  .filter-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .filter-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    background: #e0d7f5;
+    color: #6a1b9a;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s;
+  }
+
+  .filter-btn.active,
+  .filter-btn:hover {
+    background: #b39ddb;
+    color: #fff;
+  }
   
   .notification-item {
     background: #fff;
@@ -91,6 +114,11 @@ body {
     display: flex;
     align-items: flex-start;
     gap: 20px;
+    cursor: pointer;
+  }
+
+  .notification-item.unread {
+    background: #f3e5f5;
   }
   
   .notification-item .icon {
